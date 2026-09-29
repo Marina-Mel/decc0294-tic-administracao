@@ -1,0 +1,181 @@
+﻿matricula;nome_ficticio;genero;faixa_etaria;departamento;cargo;tipo_contrato;jornada;data_admissao;tempo_empresa_anos;salario_mensal;horas_extras_media_mes;faltas_12m;afastamento_dias;horas_treinamento_ano;avaliacao_desempenho;satisfacao_pesquisa;desligado_12m;motivo_desligamento
+COS0001;Nome não informado;Não informado;25-34;Produção;Auxiliar de Produção;CLT;Integral;08/04/2026;0,2;2208,16;4,7;3;0;27;4;4;Sim;Fim de contrato
+COS0002;Felipe Almeida;Masculino;55+;Comercial/Vendas;Promotor de Vendas;CLT;Integral;26/05/2025;1,5;2457,86;11,3;5;8;1;4;5;Não;—
+COS0003;Igor Ribeiro;Masculino;55+;Marketing;Analista de Marketing;CLT;Integral;09/11/2025;1,5;4115,72;8,7;2;0;6;4;5;Não;—
+COS0004;Marcos Santos;Masculino;25-34;Produção;Líder de Linha;CLT;Meio período;23/10/2018;8,6;3910,56;3,1;9;32;33;4;7;Não;—
+COS0005;Mariana Carvalho;Feminino;55+;Produção;Técnico de Segurança;CLT;Integral;20/07/2021;5,5;4422,87;6,7;7;0;33;5;9;Não;—
+COS0006;Bruna Martins;Feminino;18-24;P&D;Diretor de Operações;CLT;Integral;25/09/2022;4,5;28500,00;10,8;11;0;14;3;5;Não;—
+COS0007;Bruno Martins;Masculino;25-34;Produção;Líder de Linha;Temporário;Meio período;03/02/2019;7,4;3986,77;2,3;3;0;0;2;8;Não;—
+COS0008;Tatiane Almeida;Feminino;35-44;Comercial/Vendas;Supervisor Comercial;CLT;Integral;03/04/2026;0,5;6626,92;2,5;8;0;47;3;8;Não;—
+COS0009;Carla Moreira;Feminino;25-34;Produção;Técnico de Segurança;CLT;Integral;14/06/2023;3,8;3872,11;6,9;0;0;43;4;;Não;—
+COS0010;Henrique Almeida;Masculino;35-44;Produção;Operador de Envase;CLT;Integral;04/09/2020;6,9;2400,55;17,3;18;18;45;3;7;Sim;Acordo entre partes
+COS0011;Rafaela Ribeiro;Feminino;25-34;RH;Gerente de RH;CLT;Integral;02/04/2026;0,7;11986,33;0,5;1;0;12;5;5;Não;—
+COS0012;Aline Oliveira;Feminino;35-44;Produção;Estagiário Auxiliar de Produção;Estagiário;Meio período;20/01/2023;3,0;1127,87;12,4;6;0;26;3;9;Sim;Sem justa causa
+COS0013;Camila Silva;Feminino;25-34;Financeiro;Auxiliar Financeiro;CLT;Integral;12/04/2019;7,4;3045,03;9,8;3;0;43;5;4;Não;—
+COS0014;Felipe Ferreira;Masculino;18-24;Produção;Operador de Envase;CLT;Integral;22/04/2022;4,4;2346,30;3,4;1;6;41;3;;Não;—
+COS0015;Fabiana Teixeira;Feminino;35-44;Comercial/Vendas;Promotor de Vendas;CLT;Integral;18/03/2022;4,1;2843,80;10,7;4;0;41;5;7;Sim;Sem justa causa
+COS0016;Daniela Rocha;Feminino;45-54;Marketing;Designer de Embalagem;PJ;Integral;26/03/2026;0,9;8173,07;9,8;23;29;37;5;3;Não;—
+COS0017;Renata Carvalho;Feminino;25-34;Administrativo;Recepcionista;CLT;Meio período;09/06/2026;0,8;2130,30;2,6;10;0;0;3;2;Sim;Sem justa causa
+COS0018;Isabela Santos;Feminino;18-24;Comercial/Vendas;Supervisor Comercial;CLT;Integral;07/10/2026;0,4;6416,30;5,8;34;0;23;4;4;Sim;Sem justa causa
+COS0019;Daniela Ribeiro;Feminino;35-44;Logística;Motorista Entregador;CLT;Integral;24/11/2017;9,9;2963,09;8,5;8;0;16;1;4;Não;—
+COS0020;Gabriela Correia;Feminino;25-34;Administrativo;Gerente Administrativo;CLT;Integral;20/11/2024;2,5;9921,24;1,3;10;0;29;1;8;Não;—
+COS0021;Rodrigo Almeida;Masculino;35-44;Comercial/Vendas;Gerente Comercial;CLT;Integral;25/02/2021;5,1;11426,63;5,6;1;0;32;2;8;Não;—
+COS0022;Aline Martins;Feminino;55+;Marketing;Coordenador de Marketing;Temporário;Integral;15/09/2025;1,9;9099,93;12,6;0;0;28;4;9;Não;—
+COS0023;Juliana Carvalho;Feminino;25-34;Comercial/Vendas;Promotor de Vendas;CLT;Integral;11/07/2026;0,2;2745,19;13,6;0;0;23;5;5;Não;—
+COS0024;Nome não informado;Não informado;25-34;P&D;Técnico de Formulação;CLT;Integral;16/04/2021;5,6;4071,52;7,0;25;0;35;5;4;Não;—
+COS0025;Bruno Oliveira;Masculino;35-44;Produção;Técnico de Segurança;CLT;Integral;09/07/2025;1,4;4228,70;10,4;4;0;0;1;8;Não;—
+COS0026;Bruno Carvalho;Masculino;25-34;Produção;Operador de Envase;CLT;Integral;15/04/2026;0,4;2399,89;3,3;0;0;27;5;6;Sim;Pedido de demissão
+COS0027;Rafael Barbosa;Masculino;55+;Produção;Operador de Envase;CLT;Integral;26/10/2026;0,5;2454,87;0;8;0;32;4;;Não;—
+COS0028;Mariana Teixeira;Feminino;35-44;Comercial/Vendas;Diretor Comercial;CLT;Integral;09/10/2020;6,1;32000,00;1,8;2;0;38;4;4;Não;—
+COS0029;Renata Almeida;Feminino;25-34;Produção;Líder de Linha;Temporário;Integral;17/01/2025;1,1;3644,87;8,0;3;0;29;4;4;Não;—
+COS0030;Débora Carvalho;Feminino;25-34;Logística;Coordenador Logístico;CLT;Integral;09/08/2025;1,5;6078,22;20,0;2;0;38;4;6;Não;—
+COS0031;Sabrina Ribeiro;Feminino;55+;Marketing;Designer de Embalagem;CLT;Integral;05/09/2026;0,2;5370,90;3,9;14;0;49;4;9;Não;—
+COS0032;Fernanda Santos;Feminino;25-34;Marketing;Analista de Marketing;Temporário;Integral;26/03/2026;0,2;5050,97;7,1;0;0;23;4;7;Não;—
+COS0033;Vanessa Cardoso;Feminino;25-34;Logística;Estagiário Auxiliar de Estoque;Estagiário;Meio período;03/11/2026;0,8;983,12;2,5;5;0;35;4;6;Não;—
+COS0034;Igor Ferreira;Masculino;45-54;Logística;Conferente;CLT;Integral;27/05/2023;3,7;2740,28;7,1;5;0;43;3;3;Não;—
+COS0035;Tatiane Moreira;Feminino;25-34;Logística;Coordenador Logístico;CLT;Integral;19/10/2023;3,9;7136,24;5,3;19;0;10;2;4;Não;—
+COS0036;Bruna Moreira;Feminino;55+;Comercial/Vendas;Gerente Comercial;CLT;Integral;14/06/2020;6,8;11834,48;4,6;0;0;12;3;6;Não;—
+COS0037;Ana Pinto;Feminino;25-34;Produção;Líder de Linha;CLT;Meio período;10/03/2025;1,1;3498,93;6,1;0;41;36;4;6;Não;—
+COS0038;Daniela Teixeira;Feminino;55+;Logística;Conferente;CLT;Integral;14/05/2024;2,5;2630,80;13,1;0;0;2;4;9;Não;—
+COS0039;Patrícia Martins;Feminino;55+;Comercial/Vendas;Promotor de Vendas;CLT;Integral;15/03/2024;2,4;2600,14;12,3;0;0;24;4;8;Não;—
+COS0040;Beatriz Martins;Feminino;35-44;Qualidade;Analista de Qualidade Sr;CLT;Integral;16/03/2020;6,0;7216,47;8,5;3;0;75;1;9;Não;—
+COS0041;João Martins;Masculino;35-44;Comercial/Vendas;Promotor de Vendas;Temporário;Integral;25/12/2025;1,3;2996,91;0;32;60;29;4;7;Não;—
+COS0042;Eduardo Teixeira;Masculino;25-34;Produção;Auxiliar de Produção;CLT;Integral;14/06/2025;1,2;950,00;9,8;7;0;30;5;7;Não;—
+COS0043;Thiago Ferreira;Masculino;25-34;Logística;Estagiário Coordenador Logístico;Estagiário;Meio período;12/08/2026;0,6;1171,04;10,2;3;0;15;5;7;Sim;Acordo entre partes
+COS0044;Débora Ribeiro;Feminino;18-24;Marketing;Designer de Embalagem;CLT;Integral;24/10/2026;0,2;4879,40;2,9;0;0;28;4;5;Não;—
+COS0045;Felipe Souza;Masculino;45-54;Logística;Motorista Entregador;Temporário;Meio período;03/03/2025;1,6;2736,49;9,7;2;0;34;3;3;Sim;Fim de contrato
+COS0046;Renata Ribeiro;Feminino;35-44;Comercial/Vendas;Promotor de Vendas;CLT;Integral;13/11/2023;3,9;3072,78;9,8;11;0;22;1;4;Não;—
+COS0047;Mariana Souza;Feminino;35-44;Comercial/Vendas;Estagiário Supervisor Comercial;Estagiário;Meio período;23/08/2026;0,2;988,55;8,1;2;22;42;5;;Não;—
+COS0048;Mariana Pinto;Feminino;25-34;Qualidade;Analista de Qualidade Jr;Temporário;Integral;02/05/2017;9,8;3803,73;0;2;0;39;4;5;Sim;Pedido de demissão
+COS0049;Diego Almeida;Masculino;35-44;Logística;Auxiliar de Estoque;CLT;Integral;07/10/2011;15,7;2217,27;13,7;6;0;37;3;5;Sim;Fim de contrato
+COS0050;Gustavo Souza;Masculino;35-44;Produção;Auxiliar de Produção;CLT;Meio período;24/03/2025;1,1;2205,79;0;2;0;31;3;5;Não;—
+COS0051;André Ribeiro;Masculino;25-34;RH;Analista de RH;PJ;Integral;15/12/2026;0,4;7341,90;7,1;5;0;30;3;5;Não;—
+COS0052;Aline Cardoso;Feminino;18-24;Qualidade;Técnico de Laboratório;CLT;Integral;14/04/2022;4,5;3520,40;2,6;4;0;40;3;7;Não;—
+COS0053;Camila Cardoso;Feminino;18-24;Qualidade;Analista de Qualidade Jr;CLT;Integral;28/06/2026;0,5;3792,73;2,7;0;0;6;4;5;Não;—
+COS0054;Tatiane Rocha;Feminino;18-24;Produção;Operador de Envase;Temporário;Integral;20/10/2014;12,8;2334,95;3,1;0;0;26;3;6;Não;—
+COS0055;Elisa Barbosa;Feminino;18-24;Qualidade;Analista de Qualidade Jr;CLT;Integral;24/05/2026;0,6;3840,03;5,1;0;12;88;2;;Não;—
+COS0056;Patrícia Ferreira;Feminino;25-34;Comercial/Vendas;Supervisor Comercial;CLT;Integral;08/01/2023;3,9;6554,75;13,4;16;11;40;4;8;Não;—
+COS0057;Helena Correia;Feminino;35-44;Logística;Motorista Entregador;CLT;Integral;15/01/2026;0,2;3200,72;14,8;0;0;24;2;;Não;—
+COS0058;Paulo Oliveira;Masculino;25-34;Produção;Técnico de Segurança;CLT;Integral;24/05/2025;1,8;3872,57;3,6;7;0;41;5;8;Não;—
+COS0059;Igor Souza;Masculino;25-34;Produção;Operador de Envase;CLT;Integral;25/10/2024;2,4;2330,13;3,4;0;0;17;5;8;Não;—
+COS0060;Isabela Santos;Feminino;25-34;Produção;Técnico de Segurança;CLT;Meio período;21/02/2020;6,2;4190,71;12,5;0;0;9;4;7;Não;—
+COS0061;Marcos Moreira;Masculino;35-44;RH;Técnico de Treinamento;CLT;Integral;02/03/2024;2,5;4527,18;3,3;4;0;44;3;6;Não;—
+COS0062;Bruna Martins;Feminino;18-24;Produção;Técnico de Segurança;CLT;Integral;28/10/2023;3,7;4626,28;7,2;5;22;50;3;6;Não;—
+COS0063;Larissa Costa;Feminino;35-44;P&D;Coordenador de P&D;PJ;Integral;12/09/2023;3,9;18843,36;10,3;4;0;28;3;5;Não;—
+COS0064;Fabiana Correia;Feminino;18-24;Comercial/Vendas;Vendedor Externo;CLT;Integral;24/03/2023;3,4;3678,74;8,6;0;0;33;3;6;Não;—
+COS0065;Renata Almeida;Feminino;25-34;Administrativo;Recepcionista;CLT;Integral;14/09/2025;1,7;1936,25;15,0;2;0;27;5;9;Sim;Pedido de demissão
+COS0066;Isabela Teixeira;Feminino;45-54;Produção;Técnico de Segurança;CLT;Integral;02/07/2017;9,3;4834,42;1,1;0;0;36;3;9;Não;—
+COS0067;Renata Costa;Feminino;35-44;Comercial/Vendas;Estagiário Promotor de Vendas;Estagiário;Meio período;18/03/2026;0,9;907,60;10,6;9;0;20;3;7;Não;—
+COS0068;Renata Pinto;Feminino;18-24;Comercial/Vendas;Vendedor Externo;CLT;Integral;08/06/2026;0,2;4211,82;3,1;2;0;4;4;10;Não;—
+COS0069;Beatriz Barbosa;Feminino;55+;Produção;Auxiliar de Produção;CLT;Integral;24/10/2026;0,4;2268,46;7,5;4;0;19;4;4;Não;—
+COS0070;Débora Teixeira;Feminino;18-24;Produção;Operador de Envase;Temporário;Integral;27/07/2025;1,3;1884,29;2,3;3;0;11;5;9;Sim;Sem justa causa
+COS0071;Rafaela Barbosa;Feminino;25-34;Produção;Técnico de Segurança;CLT;Integral;20/07/2025;1,9;4336,48;2,2;6;0;27;3;4;Sim;Acordo entre partes
+COS0072;Mariana Cardoso;Feminino;25-34;Financeiro;Auxiliar Financeiro;CLT;Integral;22/12/2025;1,6;3132,53;6,7;4;0;20;3;7;Não;—
+COS0073;Felipe Teixeira;Masculino;55+;Comercial/Vendas;Promotor de Vendas;CLT;Integral;01/02/2025;1,0;2452,42;5,1;3;0;10;3;1;Não;—
+COS0074;Eduardo Costa;Masculino;45-54;Comercial/Vendas;Gerente Comercial;PJ;Integral;12/11/2011;15,1;16797,80;11,6;2;0;9;3;6;Não;—
+COS0075;Elisa Carvalho;Feminino;45-54;Produção;Líder de Linha;CLT;Integral;03/02/2026;0,5;3658,74;0;18;0;31;2;3;Não;—
+COS0076;Mariana Costa;Feminino;45-54;P&D;Coordenador de P&D;CLT;Integral;17/02/2019;7,1;12573,26;3,4;5;0;61;5;6;Não;—
+COS0077;Tatiane Oliveira;Feminino;35-44;Produção;Operador de Envase;CLT;Integral;27/06/2018;8,1;2683,97;7,3;3;0;52;3;6;Não;—
+COS0078;Bruna Pinto;Feminino;25-34;RH;Técnico de Treinamento;CLT;Integral;15/03/2022;4,1;4384,97;1,2;0;0;36;5;8;Não;—
+COS0079;Eduardo Martins;Masculino;25-34;Produção;Técnico de Segurança;CLT;Integral;28/07/2025;1,2;4224,05;3,2;1;0;18;3;9;Não;—
+COS0080;Juliana Moreira;Feminino;18-24;Administrativo;Gerente Administrativo;CLT;Meio período;27/10/2025;1,2;9557,78;12,6;1;30;14;3;5;Sim;Pedido de demissão
+COS0081;Tatiane Ribeiro;Feminino;18-24;Comercial/Vendas;Supervisor Comercial;Temporário;Integral;04/03/2023;3,3;7224,33;0;8;12;33;4;;Sim;Sem justa causa
+COS0082;Felipe Correia;Masculino;25-34;Administrativo;Recepcionista;CLT;Integral;19/05/2022;4,7;2269,85;1,2;10;0;19;3;10;Não;—
+COS0083;Fabiana Silva;Feminino;35-44;Produção;Operador de Envase;CLT;Integral;05/07/2023;3,4;2294,16;4,5;5;0;17;3;5;Não;—
+COS0084;Renata Santos;Feminino;35-44;Comercial/Vendas;Supervisor Comercial;PJ;Integral;18/08/2015;11,0;8417,81;8,5;1;0;39;4;6;Não;—
+COS0085;Juliana Ribeiro;Feminino;35-44;Qualidade;Analista de Qualidade Sr;CLT;Integral;09/12/2017;9,5;6291,61;4,5;9;28;43;3;2;Não;—
+COS0086;Isabela Moreira;Feminino;25-34;P&D;Estagiário Técnico de Formulação;Estagiário;Meio período;24/10/2026;0,5;1178,47;2,8;2;0;49;2;6;Sim;Fim de contrato
+COS0087;Renata Moreira;Feminino;35-44;P&D;Técnico de Formulação;CLT;Integral;24/09/2023;3,0;4335,53;0;2;0;0;3;8;Não;—
+COS0088;Lucas Santos;Masculino;18-24;Logística;Estagiário Auxiliar de Estoque;Estagiário;Meio período;18/11/2024;2,1;1034,02;5,9;0;0;23;3;5;Não;—
+COS0089;Nome não informado;Não informado;25-34;Marketing;Diretora de Marca;CLT;Integral;17/07/2018;8,0;26000,00;3,6;7;33;22;3;8;Não;—
+COS0090;Bruno Ferreira;Masculino;35-44;Qualidade;Analista de Qualidade Jr;CLT;Integral;25/12/2017;9,0;3962,78;6,6;3;0;34;3;8;Não;—
+COS0091;Renata Pinto;Feminino;45-54;P&D;Pesquisador Cosmético;CLT;Integral;15/09/2021;5,4;8521,48;1,3;3;0;70;3;3;Não;—
+COS0092;Vanessa Moreira;Feminino;18-24;Comercial/Vendas;Promotor de Vendas;CLT;Meio período;24/05/2024;2,2;2424,76;5,5;22;0;29;2;10;Não;—
+COS0093;Beatriz Ribeiro;Feminino;25-34;P&D;Coordenador de P&D;PJ;Integral;15/07/2009;17,3;16844,11;12,3;9;0;4;4;6;Não;—
+COS0094;Helena Silva;Feminino;35-44;RH;Técnico de Treinamento;CLT;Integral;08/04/2024;2,7;4442,15;3,2;4;10;49;4;7;Não;—
+COS0095;Aline Santos;Feminino;25-34;Qualidade;Analista de Qualidade Jr;CLT;Integral;05/01/2022;4,9;4486,01;7,5;0;0;56;4;7;Não;—
+COS0096;Isabela Santos;Feminino;35-44;Logística;Conferente;CLT;Integral;21/06/2024;2,4;3007,47;1,8;0;0;36;4;8;Não;—
+COS0097;Rafaela Santos;Feminino;35-44;RH;Gerente de RH;CLT;Integral;28/08/2026;0,3;10413,68;8,5;0;0;41;3;7;Não;—
+COS0098;Gabriela Moreira;Feminino;25-34;Administrativo;Estagiário Recepcionista;Estagiário;Meio período;04/12/2017;9,7;906,13;6,5;3;0;2;4;7;Não;—
+COS0099;Juliana Ferreira;Feminino;25-34;Marketing;Designer de Embalagem;CLT;Integral;07/06/2024;2,2;6299,36;2,4;7;0;35;5;8;Não;—
+COS0100;Natália Carvalho;Feminino;25-34;Logística;Motorista Entregador;CLT;Integral;24/03/2024;2,4;3283,31;0;4;0;19;5;6;Sim;Pedido de demissão
+COS0101;Bruno Cardoso;Masculino;25-34;Logística;Auxiliar de Estoque;CLT;Meio período;02/06/2024;2,5;2059,41;0,5;0;0;26;4;;Não;—
+COS0102;Ana Correia;Feminino;45-54;Qualidade;Analista de Qualidade Jr;CLT;Integral;20/04/2026;0,6;4152,85;0;2;0;17;5;8;Não;—
+COS0103;Carlos Oliveira;Masculino;25-34;Comercial/Vendas;Gerente Comercial;CLT;Integral;19/06/2024;2,0;12265,13;6,2;14;17;22;3;8;Sim;Pedido de demissão
+COS0104;Caio Santos;Masculino;25-34;Marketing;Analista de Marketing;PJ;Integral;03/07/2022;4,4;6942,68;2,3;2;37;46;3;10;Não;—
+COS0105;Beatriz Souza;Feminino;25-34;Marketing;Designer de Embalagem;CLT;Integral;01/06/2023;3,2;7188,47;0,2;0;0;14;3;6;Não;—
+COS0106;Igor Oliveira;Masculino;18-24;Produção;Operador de Envase;CLT;Meio período;25/06/2025;1,3;2361,38;8,2;3;0;35;4;8;Sim;Sem justa causa
+COS0107;Nome não informado;Não informado;25-34;P&D;Estagiário Coordenador de P&D;Estagiário;Meio período;17/10/2013;13,4;1262,08;6,8;5;0;52;3;6;Não;—
+COS0108;Vinícius Almeida;Masculino;25-34;Produção;Estagiário Auxiliar de Produção;Estagiário;Meio período;15/06/2023;3,4;1032,89;14,3;0;11;51;3;6;Não;—
+COS0109;Fabiana Moreira;Feminino;55+;P&D;Técnico de Formulação;CLT;Integral;19/02/2025;1,7;4462,43;11,3;17;0;51;3;7;Não;—
+COS0110;Patrícia Moreira;Feminino;25-34;Comercial/Vendas;Supervisor Comercial;CLT;Meio período;19/08/2010;16,4;6511,06;0;0;0;38;4;4;Não;—
+COS0111;Helena Rocha;Feminino;25-34;Logística;Coordenador Logístico;PJ;Integral;09/02/2026;0,4;8476,65;14,2;5;0;52;3;4;Não;—
+COS0112;Renata Souza;Feminino;25-34;Administrativo;Assistente Administrativo;CLT;Integral;11/05/2026;0,5;2786,75;2,7;4;0;6;3;8;Não;—
+COS0113;Bruna Souza;Feminino;35-44;Produção;Operador de Envase;CLT;Integral;21/07/2024;2,2;2230,13;4,6;6;0;47;4;5;Não;—
+COS0114;Camila Souza;Feminino;45-54;Comercial/Vendas;Supervisor Comercial;CLT;Integral;17/08/2025;1,1;6410,45;10,2;3;0;38;4;8;Não;—
+COS0115;Diego Costa;Masculino;25-34;Produção;Auxiliar de Produção;CLT;Integral;14/07/2026;0,5;2077,18;0,4;6;0;47;5;6;Não;—
+COS0116;Mariana Silva;Feminino;25-34;Produção;Técnico de Segurança;PJ;Integral;23/07/2022;4,0;5362,51;6,2;6;0;13;4;6;Não;—
+COS0117;Renata Pinto;Feminino;35-44;Logística;Motorista Entregador;CLT;Integral;25/01/2025;1,6;3306,73;4,8;0;0;40;3;4;Não;—
+COS0118;Rafaela Souza;Feminino;35-44;Produção;Líder de Linha;Temporário;Integral;26/04/2021;5,4;3585,60;2,6;7;0;33;3;6;Não;—
+COS0119;Eduardo Costa;Masculino;55+;P&D;Pesquisador Cosmético;PJ;Integral;05/04/2019;7,0;11101,71;9,8;2;0;28;4;6;Não;—
+COS0120;João Rocha;Masculino;25-34;Comercial/Vendas;Promotor de Vendas;Temporário;Integral;21/08/2026;0,3;2769,98;3,6;0;0;31;3;8;Não;—
+COS0121;Vanessa Moreira;Feminino;45-54;Marketing;Analista de Marketing;CLT;Meio período;15/03/2017;9,3;4414,90;0;0;11;40;5;9;Sim;Sem justa causa
+COS0122;Bruna Pereira;Feminino;18-24;Logística;Conferente;CLT;Integral;16/04/2026;0,4;2309,66;11,9;6;0;41;2;7;Não;—
+COS0123;Camila Souza;Feminino;18-24;Comercial/Vendas;Supervisor Comercial;CLT;Integral;03/03/2009;17,3;6903,55;0;3;0;27;4;8;Não;—
+COS0124;Eduardo Costa;Masculino;35-44;Logística;Coordenador Logístico;CLT;Integral;09/04/2021;5,5;7774,09;3,7;1;0;20;1;10;Não;—
+COS0125;Gabriela Barbosa;Feminino;25-34;Produção;Operador de Envase;CLT;Integral;12/01/2024;2,6;2578,72;9,8;5;0;24;3;7;Não;—
+COS0126;Isabela Almeida;Feminino;18-24;Produção;Técnico de Segurança;CLT;Integral;14/07/2024;2,4;3320,89;5,4;2;0;25;4;8;Não;—
+COS0127;Bruna Oliveira;Feminino;25-34;Comercial/Vendas;Vendedor Externo;CLT;Integral;22/05/2023;3,3;3957,43;8,8;3;0;3;4;9;Não;—
+COS0128;Felipe Ferreira;Masculino;35-44;Produção;Auxiliar de Produção;CLT;Integral;23/05/2024;2,6;2088,05;12,9;3;0;55;3;8;Não;—
+COS0129;Eduardo Carvalho;Masculino;35-44;Produção;Auxiliar de Produção;CLT;Integral;18/01/2017;9,4;1980,73;6,9;6;0;5;3;5;Não;—
+COS0130;Beatriz Pereira;Feminino;25-34;Comercial/Vendas;Estagiário Promotor de Vendas;Estagiário;Meio período;25/05/2024;2,2;927,57;14,5;5;0;16;3;6;Não;—
+COS0131;Gabriela Pinto;Feminino;35-44;Produção;Estagiário Auxiliar de Produção;Estagiário;Meio período;27/11/2024;2,7;909,56;12,6;3;0;26;3;6;Não;—
+COS0132;Elisa Ferreira;Feminino;18-24;Administrativo;Gerente Administrativo;CLT;Integral;03/12/2024;2,1;9975,47;0,8;1;0;23;4;6;Não;—
+COS0133;Rafael Martins;Masculino;25-34;Produção;Estagiário Auxiliar de Produção;Estagiário;Meio período;05/02/2021;5,1;954,44;10,3;6;0;11;4;9;Não;—
+COS0134;Juliana Santos;Feminino;25-34;Marketing;Analista de Marketing;CLT;Integral;27/05/2022;4,0;5256,56;10,7;5;0;27;4;3;Não;—
+COS0135;Helena Costa;Feminino;25-34;Comercial/Vendas;Promotor de Vendas;CLT;Integral;03/01/2021;5,9;2806,60;8,3;9;0;43;2;4;Sim;Acordo entre partes
+COS0136;Bruno Barbosa;Masculino;35-44;Produção;Estagiário Operador de Envase;Estagiário;Meio período;02/03/2024;2,1;1009,99;0,8;0;0;40;2;5;Não;—
+COS0137;Helena Pinto;Feminino;45-54;Financeiro;Analista Financeiro;CLT;Integral;06/05/2025;1,4;6362,63;1,5;33;0;31;2;3;Não;—
+COS0138;Igor Ferreira;Masculino;35-44;P&D;Coordenador de P&D;CLT;Integral;12/07/2026;0,9;12107,77;20,2;0;0;45;1;9;Não;—
+COS0139;Gabriela Moreira;Feminino;35-44;Produção;Auxiliar de Produção;CLT;Integral;07/10/2026;0,2;2163,40;9,5;5;0;15;5;;Sim;Fim de contrato
+COS0140;Paulo Oliveira;Masculino;25-34;Administrativo;Recepcionista;CLT;Integral;26/07/2022;4,6;2031,49;9,8;1;0;14;4;5;Não;—
+COS0141;Lucas Costa;Masculino;25-34;Produção;Técnico de Segurança;Temporário;Integral;20/03/2024;2,9;4019,16;2,2;10;0;41;3;;Não;—
+COS0142;Camila Martins;Feminino;25-34;Produção;Operador de Envase;CLT;Integral;01/12/2021;5,4;2542,50;11,1;5;0;1;3;8;Não;—
+COS0143;Igor Pereira;Masculino;25-34;P&D;Pesquisador Cosmético;CLT;Meio período;06/07/2026;0,7;6727,44;17,2;3;0;9;4;10;Sim;Acordo entre partes
+COS0144;Gabriela Almeida;Feminino;25-34;Logística;Motorista Entregador;CLT;Integral;19/07/2026;0,4;3115,60;0,5;2;0;51;4;8;Sim;Fim de contrato
+COS0145;Camila Moreira;Feminino;45-54;Comercial/Vendas;Gerente Comercial;CLT;Integral;13/06/2025;1,7;12274,60;3,6;1;0;39;3;9;Não;—
+COS0146;Tatiane Cardoso;Feminino;55+;Logística;Auxiliar de Estoque;Temporário;Integral;22/09/2025;1,9;2194,64;9,8;0;0;56;4;8;Não;—
+COS0147;Felipe Souza;Masculino;55+;Comercial/Vendas;Vendedor Externo;PJ;Integral;14/11/2025;1,9;5304,11;8,8;11;0;17;5;;Não;—
+COS0148;Sabrina Teixeira;Feminino;45-54;Produção;Técnico de Segurança;CLT;Integral;25/10/2024;2,9;4797,24;8,2;3;0;34;5;3;Não;—
+COS0149;Renata Santos;Feminino;25-34;Comercial/Vendas;Gerente Comercial;CLT;Integral;12/05/2022;4,8;12362,46;3,1;11;0;31;4;9;Não;—
+COS0150;Marcos Ferreira;Masculino;35-44;Logística;Auxiliar de Estoque;CLT;Integral;16/12/2020;6,1;2274,98;6,6;0;0;35;4;8;Não;—
+COS0151;Nome não informado;Não informado;25-34;Marketing;Analista de Marketing;CLT;Integral;17/08/2025;1,1;3904,07;9,0;0;0;48;4;8;Não;—
+COS0152;Isabela Oliveira;Feminino;25-34;Comercial/Vendas;Vendedor Externo;Temporário;Integral;21/04/2026;0,8;3360,73;6,5;6;0;53;4;3;Sim;Fim de contrato
+COS0153;Nome não informado;Não informado;25-34;P&D;Técnico de Formulação;CLT;Integral;09/08/2020;6,7;4898,65;2,1;4;0;40;1;10;Não;—
+COS0154;Carla Souza;Feminino;25-34;Comercial/Vendas;Supervisor Comercial;CLT;Integral;21/12/2025;1,1;6500,16;5,1;6;41;17;3;;Não;—
+COS0155;Natália Barbosa;Feminino;35-44;Logística;Conferente;CLT;Integral;26/11/2022;4,1;2699,47;0;5;0;38;4;9;Não;—
+COS0156;Caio Pereira;Masculino;55+;Marketing;Coordenador de Marketing;CLT;Integral;12/06/2021;5,4;8985,58;12,5;3;0;40;5;7;Não;—
+COS0157;Natália Correia;Feminino;25-34;Produção;Operador de Envase;CLT;Integral;15/10/2025;1,8;2373,64;12,2;10;0;6;3;;Não;—
+COS0158;Vanessa Pereira;Feminino;25-34;P&D;Pesquisador Cosmético;CLT;Integral;16/07/2024;2,0;9413,05;5,0;4;0;41;3;7;Não;—
+COS0159;Mariana Ribeiro;Feminino;25-34;Comercial/Vendas;Supervisor Comercial;CLT;Integral;17/10/2022;4,6;6985,38;2,2;0;0;54;5;8;Não;—
+COS0160;Fabiana Costa;Feminino;25-34;Produção;Operador de Envase;CLT;Integral;21/07/2021;5,5;2850,51;5,8;8;45;50;2;;Não;—
+COS0161;Débora Costa;Feminino;25-34;Qualidade;Analista de Qualidade Jr;CLT;Integral;20/05/2023;3,8;4538,33;3,9;2;0;39;4;6;Não;—
+COS0162;Paulo Cardoso;Masculino;25-34;Produção;Estagiário Técnico de Segurança;Estagiário;Meio período;01/04/2024;2,3;1175,28;8,2;4;0;0;4;;Não;—
+COS0163;Thiago Ribeiro;Masculino;25-34;Produção;Operador de Envase;Temporário;Integral;11/11/2025;1,6;2418,10;3,8;4;3;41;3;4;Não;—
+COS0164;Camila Rocha;Feminino;45-54;Produção;Técnico de Segurança;CLT;Integral;21/07/2024;2,3;3563,69;8,6;5;0;22;5;10;Não;—
+COS0165;Aline Barbosa;Feminino;35-44;Logística;Conferente;CLT;Integral;02/08/2019;7,6;2866,95;12,7;31;0;30;4;4;Não;—
+COS0166;Débora Souza;Feminino;25-34;Qualidade;Analista de Qualidade Sr;CLT;Integral;02/10/2024;2,9;6279,80;1,6;13;0;45;2;7;Sim;Fim de contrato
+COS0167;Helena Oliveira;Feminino;25-34;P&D;Técnico de Formulação;CLT;Integral;24/08/2025;1,3;6322,86;4,7;2;0;34;4;7;Não;—
+COS0168;Larissa Rocha;Feminino;45-54;P&D;Técnico de Formulação;CLT;Integral;04/08/2025;1,6;5073,92;0;25;21;40;3;;Não;—
+COS0169;Fabiana Cardoso;Feminino;18-24;Logística;Conferente;CLT;Integral;04/06/2026;0,7;2683,47;3,2;4;0;23;2;4;Não;—
+COS0170;Nome não informado;Não informado;35-44;Logística;Coordenador Logístico;Temporário;Integral;23/03/2024;2,5;7470,59;0;0;0;2;4;4;Não;—
+COS0171;João Barbosa;Masculino;55+;RH;Técnico de Treinamento;Temporário;Integral;18/12/2024;2,5;4579,17;11,2;8;0;9;3;6;Não;—
+COS0172;Gustavo Correia;Masculino;35-44;Logística;Auxiliar de Estoque;CLT;Integral;23/11/2023;3,1;2233,60;0;7;0;43;4;;Não;—
+COS0173;Fernanda Ribeiro;Feminino;35-44;Produção;Auxiliar de Produção;CLT;Integral;12/01/2022;4,9;1889,53;6,9;2;0;44;4;4;Não;—
+COS0174;Carlos Barbosa;Masculino;25-34;RH;Gerente de RH;CLT;Integral;27/08/2023;3,4;10847,03;5,7;4;0;49;4;7;Não;—
+COS0175;Camila Pereira;Feminino;55+;Qualidade;Analista de Qualidade Jr;CLT;Integral;06/03/2024;2,8;4642,91;2,7;2;0;43;4;7;Não;—
+COS0176;Tatiane Rocha;Feminino;18-24;Qualidade;Técnico de Laboratório;CLT;Integral;13/09/2025;1,9;3645,51;7,7;6;0;49;5;4;Não;—
+COS0177;Mariana Teixeira;Feminino;25-34;Logística;Estagiário Conferente;Estagiário;Meio período;13/02/2025;1,4;1173,02;7,0;23;26;52;4;5;Não;—
+COS0178;Daniela Pereira;Feminino;55+;P&D;Coordenador de P&D;CLT;Meio período;28/04/2023;3,9;12586,81;2,2;0;30;6;3;3;Não;—
+COS0179;Isabela Pinto;Feminino;18-24;P&D;Técnico de Formulação;CLT;Integral;18/02/2025;1,7;4514,76;7,5;10;0;40;3;6;Não;—
+COS0180;Natália Barbosa;Feminino;45-54;Produção;Operador de Envase;CLT;Integral;10/09/2025;1,7;2694,88;8,7;3;44;2;4;10;Sim;Pedido de demissão
