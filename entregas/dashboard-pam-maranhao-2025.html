@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard PAM 2025 — Maranhao | IBGE SIDRA</title>
+<style>
+:root{--bg:#0f1510;--panel:#1a241c;--panel2:#222f24;--line:#33452f;--text:#f1f5ef;--muted:#a9bda6;--green:#7bc47f;--lime:#c6e48b;--gold:#e8c547;--orange:#e8913a;--blue:#6db9e8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;background:radial-gradient(1000px 400px at 50% -100px,#2a4a2b 0%,var(--bg) 60%);color:var(--text);padding:20px;min-height:100vh}
+header{background:linear-gradient(135deg,#1b3a22,#2e6b34 55%,#4a8c4e);border:1px solid #3a5a3c;border-radius:18px;padding:24px;margin-bottom:14px}
+header h1{font-size:1.5rem}header h1 .y{color:var(--gold)}
+header p{opacity:.9;margin-top:6px;font-size:.88rem}
+.note{background:#141d15;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:.78rem;margin-bottom:14px;color:var(--muted)}
+.note b{color:var(--lime)}
+.controls{position:sticky;top:0;z-index:20;background:rgba(15,21,16,.94);padding:12px;border:1px solid var(--line);border-radius:14px;display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+.controls select,.controls input{background:#141d15;color:var(--text);padding:9px 12px;border:1px solid var(--line);border-radius:10px;font-size:.86rem}
+.controls button{background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:10px;padding:9px 13px;cursor:pointer;font-size:.84rem}
+.controls button:hover{color:#fff;border-color:var(--green)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.chip{background:#141d15;border:1px solid var(--line);color:var(--muted);border-radius:20px;padding:7px 14px;font-size:.8rem;cursor:pointer}
+.chip.on{background:linear-gradient(135deg,var(--green),#3a7a3e);color:#0f1510;font-weight:700;border-color:transparent}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:14px 0}
+.card{background:linear-gradient(180deg,#1f2d21,#141d15);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+.card .v{font-size:1.35rem;font-weight:800;color:var(--lime)}.card .l{font-size:.72rem;color:var(--muted);font-weight:600;margin-top:4px}.card .s{font-size:.7rem;color:var(--gold);margin-top:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:14px}
+.panel{background:linear-gradient(180deg,#1a241c,#141a15);border:1px solid var(--line);border-radius:16px;padding:16px}
+.panel h3{font-size:.95rem;color:#fff}.panel .sub{font-size:.75rem;color:var(--muted);margin-bottom:10px}
+.hbar{margin:7px 0}
+.hbar .top{display:flex;justify-content:space-between;font-size:.78rem;margin-bottom:3px}
+.hbar .top .n{color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:55%}
+.hbar .top .val{color:var(--lime);font-weight:700}
+.hbar .track{background:#0f1510;border-radius:6px;height:14px;overflow:hidden;border:1px solid #2a3a2c}
+.hbar .fill{height:100%;background:linear-gradient(90deg,#4a8c4e,#7bc47f,#c6e48b);border-radius:6px;transition:width .7s}
+.hbar.perm .fill{background:linear-gradient(90deg,#8c6a2a,#e8c547,#f5e08b)}
+.hbar .pct{font-size:.68rem;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:.76rem}
+th{position:sticky;top:0;background:#243423;color:var(--lime);padding:9px 8px;text-align:right}th:first-child,td:first-child{text-align:left}
+td{padding:7px 8px;border-bottom:1px solid #2a3a2c;text-align:right}tr:hover td{background:#222f24}
+.table-wrap{background:#141a15;border:1px solid var(--line);border-radius:16px;margin-top:14px;overflow:auto;max-height:52vh}
+.var-up{color:#7bc47f;font-weight:700}.var-dn{color:#e07856;font-weight:700}
+footer{margin:14px;color:var(--muted);font-size:.76rem;text-align:center}
+.kbd{background:#0f1510;border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.72rem}
+.tip{font-size:.72rem;color:var(--muted);margin-top:6px}
+</style>
+</head>
+<body>
+<header>
+<h1>🌾 PAM 2025 — Maranhao <span class="y">· IBGE SIDRA</span></h1>
+<p>Producao Agricola Municipal · UF 21 · Tabelas 1612 (temporarias) + 1613 (permanentes) · Ano de referencia 2025 · Valores em <b>mil R$</b></p>
+</header>
+<div class="note">Fonte: <b>API SIDRA</b> — <span class="kbd">apisidra.ibge.gov.br/values/t/1612/n3/21/v/all/p/2025/c81/all</span> · <span class="kbd">.../t/1613/n3/21/.../c82/all</span> · <span class="kbd">.../t/5457/.../c782/all</span> · Ultimo periodo disponivel: <b>2025</b> (modificacao 01/10/2026). Funciona <b>offline</b>, dados embutidos.</div>
+
+<div class="controls">
+<label style="font-size:.84rem;color:var(--muted)">Lavoura:
+<select id="fTipo"><option value="temp">Temporarias (1612)</option><option value="perm">Permanentes (1613)</option></select></label>
+<label style="font-size:.84rem;color:var(--muted)">Metrica:
+<select id="fMet"><option value="valor">Valor da producao (mil R$)</option><option value="quant">Quantidade (t)</option><option value="area_plantada">Area plantada/dest. (ha)</option><option value="rend">Rendimento (kg/ha)</option></select></label>
+<label style="font-size:.84rem;color:var(--muted)">Busca: <input id="busca" placeholder="ex: soja, milho..."></label>
+<button id="csv">⬇ Exportar CSV</button>
+<span id="resumo" style="font-size:.8rem;color:var(--lime);font-weight:600"></span>
+</div>
+
+<div class="cards" id="kpis"></div>
+
+<div class="grid">
+<div class="panel"><h3 id="tChart1">Ranking por valor — temporarias</h3><div class="sub" id="sChart1">Clique mental: soja + milho = 86,4% do valor temporario</div><div id="chart1"></div><div class="tip">Barras proporcionais ao lider. Passe o filtro de metrica para ver quantidade, area e rendimento.</div></div>
+<div class="panel"><h3>Comparativo 2024 × 2025 — principais temporarias</h3><div class="sub">Variacao % e valores absolutos (API SIDRA)</div><div id="comp"></div><div class="tip">Arroz: +1,7% producao mas -21,5% valor (queda de preco). Cana: -4,5% producao mas +54,1% valor (alta de preco).</div></div>
+<div class="panel"><h3>Permanentes — valor (mil R$)</h3><div class="sub">Banana = 85% do valor permanente · Castanha tem maior area e menor rendimento</div><div id="chartPerm"></div></div>
+<div class="panel"><h3>Area plantada (ha) — temporarias</h3><div class="sub">Soja 63,1% + Milho 24,6% = 87,7% da area temporaria (2,18 M ha)</div><div id="chartArea"></div></div>
+</div>
+
+<div class="table-wrap"><table><thead><tr><th>Produto</th><th>Area plant./dest. (ha)</th><th>Area colhida (ha)</th><th>Quant. (t)</th><th>Rend. (kg/ha)</th><th>Valor (mil R$)</th><th>% valor tipo</th></tr></thead><tbody id="tb"></tbody></table></div>
+<footer>Valores em mil Reais (×1.000). Quantidade em toneladas (exceto abacaxi/coco em mil frutos na origem, convertidos na API). Rendimento em kg/ha. Perda de area 2025: 5.773 ha (0,27%). Dashboard single-file para aula 13-10.</footer>
+
+<script>
+const TEMP=[
+{n:"Soja (grao)",ap:1373769,ac:1373014,q:4423088,r:3221,v:8921025},
+{n:"Milho (grao)",ap:536729,ac:536066,q:2712134,r:5059,v:2975809},
+{n:"Cana-de-acucar",ap:45890,ac:45890,q:2583724,r:56303,v:778886},
+{n:"Arroz (casca)",ap:77232,ac:73590,q:180334,r:2451,v:305535},
+{n:"Algodao herbaceo",ap:32996,ac:32996,q:135690,r:4112,v:299591},
+{n:"Mandioca",ap:47185,ac:47052,q:370376,r:7872,v:230614},
+{n:"Feijao (grao)",ap:45125,ac:44795,q:29310,r:654,v:121969},
+{n:"Abacaxi*",ap:1744,ac:1744,q:38428,r:22034,v:69234},
+{n:"Melancia",ap:1240,ac:1240,q:25763,r:20777,v:35735},
+{n:"Sorgo (grao)",ap:15023,ac:14773,q:32592,r:2206,v:18847},
+{n:"Tomate",ap:163,ac:163,q:3502,r:21485,v:13712},
+{n:"Fava (grao)",ap:435,ac:435,q:114,r:262,v:1732},
+{n:"Amendoim (casca)",ap:98,ac:98,q:162,r:1653,v:473},
+{n:"Abobora",ap:7,ac:7,q:41,r:5857,v:68},
+{n:"Melao",ap:4,ac:4,q:28,r:7000,v:56},
+{n:"Batata-doce",ap:3,ac:3,q:9,r:3000,v:36}
+];
+const PERM=[
+{n:"Banana (cacho)",ap:4684,ac:4682,q:78718,r:16813,v:139008},
+{n:"Acai",ap:636,ac:621,q:2353,r:3789,v:8480},
+{n:"Castanha de caju",ap:7683,ac:7683,q:2650,r:345,v:7623},
+{n:"Coco-da-baia*",ap:1139,ac:1139,q:5092,r:4471,v:4748},
+{n:"Mamao",ap:21,ac:21,q:619,r:29476,v:1452},
+{n:"Limao",ap:116,ac:116,q:340,r:2931,v:663},
+{n:"Maracuja",ap:54,ac:54,q:171,r:3167,v:580},
+{n:"Manga",ap:116,ac:116,q:433,r:3733,v:420},
+{n:"Borracha coagulada",ap:151,ac:151,q:111,r:735,v:364},
+{n:"Laranja",ap:40,ac:40,q:185,r:4625,v:124},
+{n:"Cacau",ap:3,ac:3,q:1,r:333,v:50},
+{n:"Pimenta-do-reino",ap:6,ac:6,q:6,r:1000,v:41},
+{n:"Goiaba",ap:1,ac:1,q:1,r:1000,v:4}
+];
+const COMP=[
+{n:"Soja",ap24:1302915,ap25:1373769,q24:4073259,q25:4423088,v24:8338428,v25:8921025,r24:3126,r25:3221},
+{n:"Milho",ap24:496073,ap25:536729,q24:2384065,q25:2712134,v24:2769647,v25:2975809,r24:4806,r25:5059},
+{n:"Cana",ap24:46022,ap25:45890,q24:2705753,q25:2583724,v24:505519,v25:778886,r24:58793,r25:56303},
+{n:"Arroz",ap24:77119,ap25:77232,q24:177340,q25:180334,v24:388988,v25:305535,r24:2301,r25:2451},
+{n:"Algodao",ap24:32637,ap25:32996,q24:133815,q25:135690,v24:291768,v25:299591,r24:4100,r25:4112},
+{n:"Mandioca",ap24:48064,ap25:47185,q24:377827,q25:370376,v24:248366,v25:230614,r24:7921,r25:7872},
+{n:"Feijao",ap24:45917,ap25:45125,q24:26970,q25:29310,v24:110113,v25:121969,r24:587,r25:654}
+];
+const fmtInt=v=>v==null?"—":Math.round(v).toLocaleString("pt-BR");
+const fmtMil=v=>v==null?"—":Math.round(v).toLocaleString("pt-BR");
+const pct=(a,b)=>b?((a/b*100).toFixed(1)+"%"):"—";
+const totalTempV=TEMP.reduce((s,d)=>s+d.v,0);
+const totalPermV=PERM.reduce((s,d)=>s+d.v,0);
+
+function kpis(){
+ const T=TEMP, P=PERM;
+ const totV=13773322+163557; // 5457 oficial 13.936.879 (soma 13.936.879)
+ const cards=[
+  [ (13936879/1000).toFixed(2)+" bi","Valor total PAM 2025 (R$)","+7,4% vs 2024"],
+  [ (2192293/1000000).toFixed(2)+" M ha","Area total plantada","+5,3% vs 2024"],
+  [ "86,4%","Soja+Milho no valor temp","64,8% soja · 21,6% milho"],
+  [ "87,7%","Soja+Milho na area temp","63,1% soja · 24,6% milho"],
+  [ "R$ 13,77 bi","Temporarias (98,8%)","2,18 M ha · 16 culturas"],
+  [ "R$ 163,6 mi","Permanentes (1,2%)","14,6 mil ha · Banana 85%"]
+ ];
+ document.getElementById("kpis").innerHTML=cards.map(c=>`<div class="card"><div class="v">${c[0]}</div><div class="l">${c[1]}</div><div class="s">${c[2]}</div></div>`).join("");
+}
+function hbars(el,arr,key,fmt,isPerm){
+ const max=Math.max(...arr.map(d=>d[key]||0));
+ el.innerHTML=arr.map(d=>{
+  const val=d[key]||0; const w=max?val/max*100:0;
+  return `<div class="hbar${isPerm?" perm":""}"><div class="top"><span class="n" title="${d.n}">${d.n}</span><span class="val">${fmt(val)}</span></div><div class="track"><div class="fill" style="width:${w.toFixed(1)}%"></div></div></div>`;
+ }).join("");
+}
+function drawMain(){
+ const tipo=document.getElementById("fTipo").value;
+ const met=document.getElementById("fMet").value;
+ const bus=document.getElementById("busca").value.toLowerCase();
+ const base=tipo==="temp"?TEMP:PERM;
+ const key=met==="valor"?"v":met==="quant"?"q":met==="area_plantada"?"ap":"r";
+ const fmt=met==="valor"?fmtMil:fmtInt;
+ let arr=[...base].sort((a,b)=>(b[key]||0)-(a[key]||0));
+ if(bus) arr=arr.filter(d=>d.n.toLowerCase().includes(bus));
+ const tot=base.reduce((s,d)=>s+(d.v||0),0);
+ document.getElementById("tChart1").textContent=`Ranking por ${document.getElementById("fMet").selectedOptions[0].text} — ${tipo==="temp"?"temporarias":"permanentes"}`;
+ hbars(document.getElementById("chart1"),arr.slice(0,12),key,fmt,tipo==="perm");
+ document.getElementById("resumo").textContent=`${arr.length} culturas · total tipo R$ ${(tot/1000).toFixed(1)} mi`;
+ // tabela
+ document.getElementById("tb").innerHTML=arr.map(d=>`<tr><td>${d.n}</td><td>${fmtInt(d.ap)}</td><td>${fmtInt(d.ac)}</td><td>${fmtInt(d.q)}</td><td>${fmtInt(d.r)}</td><td>${fmtMil(d.v)}</td><td>${pct(d.v,tot)}</td></tr>`).join("");
+}
+function drawFixed(){
+ hbars(document.getElementById("chartPerm"),[...PERM].sort((a,b)=>b.v-a.v).slice(0,10),"v",fmtMil,true);
+ hbars(document.getElementById("chartArea"),[...TEMP].sort((a,b)=>b.ap-a.ap).slice(0,10),"ap",v=>fmtInt(v)+" ha",false);
+ const c=document.getElementById("comp");
+ c.innerHTML=COMP.map(d=>{
+  const vq=((d.q25-d.q24)/d.q24*100).toFixed(1);
+  const vv=((d.v25-d.v24)/d.v24*100).toFixed(1);
+  const clsQ=vq>=0?"var-up":"var-dn", clsV=vv>=0?"var-up":"var-dn";
+  return `<div class="hbar"><div class="top"><span class="n"><b>${d.n}</b> · ${fmtInt(d.q24)}→<b>${fmtInt(d.q25)} t</b></span><span class="${clsQ}">${vq>0?"+":""}${vq}% qtd</span></div><div class="track"><div class="fill" style="width:${Math.min(100,d.q25/Math.max(...COMP.map(x=>x.q25))*100).toFixed(1)}%"></div></div><div class="pct">Valor: ${(d.v24/1000).toFixed(0)}→<b>${(d.v25/1000).toFixed(0)} mi R$</b> (<span class="${clsV}">${vv>0?"+":""}${vv}%</span>) · Rend ${d.r24}→${d.r25} kg/ha</div></div>`;
+ }).join("");
+}
+document.getElementById("fTipo").onchange=drawMain;
+document.getElementById("fMet").onchange=drawMain;
+document.getElementById("busca").oninput=drawMain;
+document.getElementById("csv").onclick=()=>{
+ const tipo=document.getElementById("fTipo").value;
+ const base=tipo==="temp"?TEMP:PERM;
+ let s="produto;area_plantada_ha;area_colhida_ha;quant_t;rend_kg_ha;valor_mil_rs\n";
+ base.forEach(d=>{s+=`${d.n};${d.ap??""};${d.ac??""};${d.q??""};${d.r??""};${d.v??""}\n`;});
+ const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([s],{type:"text/csv"}));a.download=`pam2025_ma_${tipo}.csv`;a.click();
+};
+kpis();drawFixed();drawMain();
+</script>
+</body>
+</html>
