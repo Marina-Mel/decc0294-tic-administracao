@@ -1,0 +1,181 @@
+matricula;departamento;cargo;tipo_contrato;tempo_empresa_anos;salario_mensal;avaliacao_desempenho;desligado_12m;motivo_desligamento;faixa_etaria;genero;satisfacao_pesquisa
+RH001;RH;Assistente de RH;Temporario;4,4;3152,23;4;Nao;;25-34;Masculino;2
+RH002;Comercial/Vendas;Supervisor de Vendas;CLT;0,4;3095,63;2;Sim;Sem justa causa;18-24;Feminino;2
+RH003;Logistica;Motorista Entregador;CLT;2,5;5708,71;5;Nao;;25-34;Feminino;5
+RH004;Producao;Supervisor de Producao;CLT;1,8;3168,55;4;Nao;;55+;Feminino;
+RH005;Producao;Supervisor de Producao;CLT;8,4;5201,49;3;Nao;;25-34;Feminino;1
+RH006;Comercial/Vendas;Representante Comercial;CLT;8,9;4633,21;3;Nao;;25-34;Masculino;3
+RH007;Financeiro;Contador;Estagio;7,0;5970,67;4;Nao;;35-44;Feminino;4
+RH008;Logistica;Auxiliar Logistico;CLT;0,7;3665,37;2;Sim;Pedido de demissao;18-24;Feminino;
+RH009;Administrativo;Analista Administrativo;CLT;0,4;2434,32;3;Nao;;25-34;Feminino;4
+RH010;Producao;Supervisor de Producao;CLT;1,1;3753,37;5;Sim;Sem justa causa;18-24;Feminino;2
+RH011;Administrativo;Auxiliar de Escritorio;CLT;7,3;3280,00;3;Nao;;18-24;Masculino;4
+RH012;Producao;Auxiliar de Producao;CLT;1,7;2234,32;4;Nao;;18-24;Feminino;3
+RH013;Marketing;Coordenador de Marketing;Temporario;5,1;3741,14;5;Nao;;25-34;Masculino;3
+RH014;Comercial/Vendas;Vendedor;Estagio;3,6;3871,99;1;Sim;Fim de contrato;25-34;Feminino;
+RH015;Producao;Auxiliar de Producao;Estagio;3,9;1900,29;1;Sim;Fim de contrato;25-34;Feminino;2
+RH016;Producao;Tecnico de Qualidade;Temporario;4,0;2690,23;3;Sim;Pedido de demissao;18-24;Masculino;4
+RH017;Producao;Auxiliar de Producao;CLT;9,6;2086,19;3;Nao;;55+;Feminino;3
+RH018;Producao;Auxiliar de Producao;CLT;5,8;2852,65;5;Nao;;35-44;Masculino;4
+RH019;Logistica;Coordenador Logistico;Temporario;1,8;4660,11;4;Nao;;25-34;Masculino;3
+RH020;Logistica;Coordenador Logistico;CLT;3,2;3895,56;3;Nao;;45-54;Masculino;4
+RH021;Producao;Tecnico de Qualidade;CLT;7,2;4350,47;3;Nao;;45-54;Masculino;3
+RH022;Producao;Operador de Maquina;CLT;1,3;4026,43;3;Nao;;35-44;Feminino;5
+RH023;Administrativo;Gerente Administrativo;CLT;4,9;2167,89;2;Nao;;35-44;Feminino;
+RH024;Producao;Auxiliar de Producao;CLT;8,6;3514,39;3;Nao;;18-24;Masculino;
+RH025;Comercial/Vendas;Vendedor;CLT;1,7;3728,95;3;Nao;;25-34;Feminino;3
+RH026;Financeiro;Analista Financeiro;CLT;4,9;5655,93;3;Sim;Sem justa causa;55+;Masculino;3
+RH027;Producao;Auxiliar de Producao;CLT;5,7;3792,42;3;Nao;;18-24;Masculino;3
+RH028;Comercial/Vendas;Analista Comercial;CLT;1,1;3137,66;3;Nao;;18-24;Masculino;
+RH029;Financeiro;Contador;CLT;4,8;6282,88;4;Nao;;25-34;Feminino;5
+RH030;Producao;Auxiliar de Producao;CLT;2,1;4339,21;3;Nao;;25-34;Feminino;5
+RH031;Administrativo;Assistente Administrativo;CLT;2,1;4641,03;4;Nao;;25-34;Feminino;5
+RH032;Producao;Supervisor de Producao;CLT;4,2;2781,88;5;Nao;;35-44;Feminino;4
+RH033;Logistica;Auxiliar Logistico;CLT;0,5;2126,17;3;Nao;;45-54;Feminino;5
+RH034;Comercial/Vendas;Analista Comercial;CLT;9,7;4066,61;4;Nao;;25-34;Masculino;4
+RH035;Administrativo;Assistente Administrativo;CLT;5,5;3906,96;3;Sim;Sem justa causa;45-54;Masculino;2
+RH036;Logistica;Auxiliar Logistico;CLT;0,7;3919,30;3;Nao;;45-54;Feminino;2
+RH037;Logistica;Conferente;Temporario;7,3;4633,14;3;Nao;;35-44;Masculino;4
+RH038;Comercial/Vendas;Analista Comercial;CLT;7,3;4403,78;2;Nao;;35-44;Feminino;4
+RH039;Administrativo;Gerente Administrativo;CLT;2,0;3594,80;1;Nao;;35-44;Masculino;
+RH040;Financeiro;Assistente Financeiro;CLT;10,0;4759,34;2;Nao;;35-44;Masculino;3
+RH041;Comercial/Vendas;Representante Comercial;Temporario;5,9;5573,42;4;Nao;;35-44;Feminino;4
+RH042;Comercial/Vendas;Representante Comercial;CLT;4,3;3744,30;4;Nao;;25-34;Masculino;1
+RH043;Producao;Supervisor de Producao;CLT;7,2;3476,92;1;Nao;;35-44;Masculino;
+RH044;Logistica;Motorista Entregador;CLT;9,1;2937,15;4;Nao;;45-54;Masculino;5
+RH045;Comercial/Vendas;Representante Comercial;CLT;2,6;2991,15;3;Nao;;18-24;Masculino;4
+RH046;Producao;Auxiliar de Producao;Temporario;1,0;3780,06;5;Nao;;18-24;Masculino;5
+RH047;Marketing;Analista de Marketing;CLT;5,0;4548,00;3;Sim;Pedido de demissao;18-24;Feminino;3
+RH048;Producao;Tecnico de Qualidade;CLT;4,2;3262,69;3;Nao;;45-54;Feminino;3
+RH049;Administrativo;Analista Administrativo;CLT;5,9;4941,29;4;Nao;;25-34;Masculino;4
+RH050;Logistica;Conferente;CLT;1,3;4014,08;4;Nao;;25-34;Feminino;4
+RH051;Administrativo;Auxiliar de Escritorio;CLT;6,9;3568,63;4;Nao;;25-34;Feminino;4
+RH052;Comercial/Vendas;Supervisor de Vendas;CLT;9,5;4432,23;1;Nao;;18-24;Feminino;5
+RH053;Administrativo;Gerente Administrativo;CLT;4,4;3495,74;3;Nao;;18-24;Feminino;5
+RH054;Financeiro;Assistente Financeiro;CLT;4,6;4016,68;2;Sim;Acordo;18-24;Masculino;1
+RH055;Logistica;Conferente;CLT;5,2;2599,72;2;Sim;Pedido de demissao;18-24;Masculino;3
+RH056;Comercial/Vendas;Supervisor de Vendas;Estagio;0,9;4922,35;4;Nao;;25-34;Feminino;5
+RH057;Producao;Supervisor de Producao;Temporario;3,4;3229,68;3;Nao;;25-34;Feminino;4
+RH058;Financeiro;Analista Financeiro;CLT;2,3;6259,83;3;Nao;;18-24;Feminino;4
+RH059;Marketing;Designer;CLT;6,0;4424,56;3;Nao;;25-34;Masculino;3
+RH060;Administrativo;Assistente Administrativo;CLT;4,3;4209,35;3;Nao;;25-34;Masculino;4
+RH061;Administrativo;Assistente Administrativo;CLT;9,1;5081,57;4;Nao;;18-24;Feminino;4
+RH062;Producao;Supervisor de Producao;CLT;4,1;3808,01;3;Nao;;35-44;Masculino;4
+RH063;Producao;Supervisor de Producao;Temporario;8,6;4417,01;2;Nao;;45-54;Feminino;4
+RH064;Logistica;Conferente;CLT;0,3;4347,70;4;Sim;Pedido de demissao;18-24;Masculino;4
+RH065;Producao;Supervisor de Producao;Temporario;3,6;3088,55;5;Sim;Pedido de demissao;25-34;Feminino;2
+RH066;Comercial/Vendas;Vendedor;CLT;6,3;5071,98;5;Sim;Pedido de demissao;45-54;Masculino;4
+RH067;Logistica;Motorista Entregador;CLT;1,2;2577,58;3;Nao;;25-34;Feminino;
+RH068;Producao;Tecnico de Qualidade;Estagio;9,8;2829,24;4;Nao;;45-54;Feminino;2
+RH069;Marketing;Analista de Marketing;CLT;2,3;4715,28;5;Nao;;25-34;Feminino;4
+RH070;Administrativo;Assistente Administrativo;CLT;6,0;1678,10;5;Nao;;45-54;Feminino;
+RH071;Marketing;Designer;CLT;6,4;4349,38;2;Nao;;55+;Feminino;1
+RH072;Producao;Tecnico de Qualidade;CLT;3,6;3842,33;5;Sim;Sem justa causa;45-54;Feminino;4
+RH073;Producao;Supervisor de Producao;CLT;8,6;2716,67;4;Nao;;18-24;Feminino;5
+RH074;Financeiro;Contador;Temporario;7,7;5439,42;3;Nao;;25-34;Masculino;3
+RH075;Administrativo;Assistente Administrativo;CLT;4,2;4770,36;1;Nao;;35-44;Feminino;5
+RH076;Producao;Tecnico de Qualidade;CLT;4,4;2529,91;4;Nao;;25-34;Feminino;5
+RH077;Administrativo;Auxiliar de Escritorio;CLT;1,9;3262,74;1;Sim;Fim de contrato;55+;Feminino;
+RH078;RH;Analista de RH;CLT;3,2;4426,02;3;Nao;;35-44;Feminino;4
+RH079;Logistica;Coordenador Logistico;CLT;0,8;4362,17;4;Sim;Pedido de demissao;45-54;Feminino;1
+RH080;Producao;Auxiliar de Producao;CLT;4,8;2734,13;1;Sim;Pedido de demissao;25-34;Feminino;2
+RH081;Logistica;Coordenador Logistico;CLT;2,3;2737,38;2;Nao;;18-24;Feminino;5
+RH082;Financeiro;Analista Financeiro;Estagio;6,8;4574,56;3;Nao;;55+;Masculino;1
+RH083;Financeiro;Analista Financeiro;CLT;7,0;4028,95;2;Nao;;35-44;Masculino;5
+RH084;Producao;Tecnico de Qualidade;CLT;6,0;1678,10;4;Nao;;18-24;Masculino;3
+RH085;RH;Assistente de RH;CLT;0,5;3854,53;2;Sim;Pedido de demissao;25-34;Masculino;4
+RH086;RH;Analista de RH;Temporario;6,2;4731,46;1;Nao;;18-24;Masculino;5
+RH087;Logistica;Coordenador Logistico;Estagio;5,3;3073,57;4;Nao;;35-44;Feminino;3
+RH088;Producao;Tecnico de Qualidade;CLT;0,1;3741,90;3;Sim;Pedido de demissao;25-34;Masculino;1
+RH089;Producao;Auxiliar de Producao;CLT;9,2;2786,14;5;Nao;;25-34;Feminino;3
+RH090;Logistica;Conferente;CLT;5,4;2225,66;4;Nao;;45-54;Feminino;3
+RH091;Comercial/Vendas;Analista Comercial;Estagio;7,3;4298,67;4;Nao;;25-34;Feminino;5
+RH092;Producao;Tecnico de Qualidade;CLT;5,6;2550,21;3;Sim;Pedido de demissao;25-34;Feminino;1
+RH093;Marketing;Coordenador de Marketing;CLT;6,3;4357,02;3;Sim;Pedido de demissao;25-34;Masculino;4
+RH094;Comercial/Vendas;Analista Comercial;Temporario;7,0;4793,96;3;Sim;Acordo;18-24;Masculino;4
+RH095;Comercial/Vendas;Analista Comercial;CLT;1,7;3273,64;5;Sim;Sem justa causa;25-34;Feminino;
+RH096;Financeiro;Contador;CLT;4,7;4540,78;3;Nao;;25-34;Feminino;
+RH097;Comercial/Vendas;Representante Comercial;CLT;6,4;5373,15;4;Nao;;55+;Masculino;3
+RH098;RH;Gerente de RH;CLT;9,2;4664,70;4;Nao;;45-54;Feminino;3
+RH099;Producao;Operador de Maquina;CLT;6,0;2680,29;3;Nao;;35-44;Feminino;3
+RH100;Producao;Operador de Maquina;Temporario;2,7;3215,32;4;Nao;;18-24;Masculino;1
+RH101;RH;Gerente de RH;CLT;9,0;4590,69;2;Nao;;18-24;Masculino;4
+RH102;Logistica;Motorista Entregador;CLT;9,5;2772,53;4;Nao;;55+;Masculino;
+RH103;Producao;Supervisor de Producao;CLT;5,9;3751,49;3;Nao;;18-24;Feminino;5
+RH104;Producao;Operador de Maquina;CLT;9,5;2607,39;5;Nao;;18-24;Masculino;2
+RH105;Financeiro;Analista Financeiro;CLT;2,3;4427,44;3;Nao;;25-34;Masculino;5
+RH106;Financeiro;Contador;Estagio;3,7;3964,78;5;Nao;;25-34;Masculino;5
+RH107;Comercial/Vendas;Vendedor;CLT;0,8;3121,18;3;Nao;;35-44;Feminino;3
+RH108;Comercial/Vendas;Analista Comercial;CLT;4,8;4525,84;3;Nao;;35-44;Feminino;1
+RH109;Producao;Supervisor de Producao;CLT;6,3;2572,36;5;Nao;;55+;Masculino;5
+RH110;Administrativo;Assistente Administrativo;CLT;9,3;4849,05;2;Nao;;25-34;Feminino;2
+RH111;Producao;Operador de Maquina;Estagio;9,6;1678,10;4;Nao;;25-34;Feminino;4
+RH112;Logistica;Coordenador Logistico;CLT;1,8;3006,89;1;Sim;Pedido de demissao;18-24;Feminino;2
+RH113;Producao;Auxiliar de Producao;CLT;8,8;3384,57;3;Nao;;45-54;Masculino;2
+RH114;Administrativo;Assistente Administrativo;CLT;3,8;4373,68;3;Nao;;25-34;Feminino;3
+RH115;Administrativo;Auxiliar de Escritorio;CLT;0,4;3097,16;5;Sim;Sem justa causa;25-34;Masculino;5
+RH116;Comercial/Vendas;Representante Comercial;CLT;7,8;2771,70;1;Sim;Pedido de demissao;45-54;Masculino;2
+RH117;Financeiro;Contador;Temporario;9,2;5106,39;3;Nao;;35-44;Masculino;4
+RH118;Marketing;Coordenador de Marketing;Temporario;4,9;5022,19;3;Nao;;35-44;Masculino;5
+RH119;Comercial/Vendas;Vendedor;CLT;3,6;5102,18;3;Nao;;25-34;Feminino;4
+RH120;Comercial/Vendas;Vendedor;CLT;6,6;5140,76;4;Nao;;45-54;Masculino;5
+RH121;Producao;Operador de Maquina;Estagio;8,4;2255,37;3;Nao;;18-24;Masculino;5
+RH122;Administrativo;Auxiliar de Escritorio;CLT;6,9;3147,64;2;Nao;;25-34;Feminino;4
+RH123;Producao;Tecnico de Qualidade;CLT;8,7;3857,61;3;Nao;;35-44;Masculino;5
+RH124;Financeiro;Assistente Financeiro;Temporario;1,4;4982,49;4;Nao;;18-24;Masculino;4
+RH125;Comercial/Vendas;Analista Comercial;CLT;1,6;4509,52;2;Nao;;35-44;Masculino;4
+RH126;Marketing;Analista de Marketing;CLT;6,3;5346,79;2;Nao;;35-44;Feminino;3
+RH127;Comercial/Vendas;Analista Comercial;CLT;1,9;2785,01;5;Nao;;25-34;Feminino;5
+RH128;Logistica;Auxiliar Logistico;CLT;4,6;3456,58;4;Nao;;35-44;Feminino;4
+RH129;Comercial/Vendas;Supervisor de Vendas;Estagio;7,6;4706,42;2;Nao;;35-44;Feminino;4
+RH130;Financeiro;Analista Financeiro;Estagio;3,1;3168,50;3;Nao;;35-44;Feminino;5
+RH131;Administrativo;Analista Administrativo;CLT;7,8;3982,67;3;Nao;;25-34;Masculino;4
+RH132;Producao;Supervisor de Producao;CLT;0,5;4919,83;3;Nao;;25-34;Masculino;3
+RH133;Marketing;Designer;CLT;4,8;4492,13;5;Nao;;18-24;Feminino;5
+RH134;Producao;Tecnico de Qualidade;CLT;6,9;4068,59;4;Nao;;25-34;Masculino;4
+RH135;Logistica;Auxiliar Logistico;Estagio;4,1;4263,53;3;Nao;;35-44;Feminino;
+RH136;Logistica;Motorista Entregador;Temporario;1,1;4408,96;2;Nao;;25-34;Feminino;4
+RH137;Producao;Supervisor de Producao;CLT;0,7;2704,37;3;Sim;Pedido de demissao;25-34;Masculino;
+RH138;Administrativo;Auxiliar de Escritorio;Estagio;7,7;3658,50;4;Nao;;35-44;Feminino;4
+RH139;Marketing;Analista de Marketing;CLT;7,1;4065,39;4;Nao;;25-34;Feminino;4
+RH140;Logistica;Motorista Entregador;CLT;5,7;3825,35;3;Nao;;25-34;Masculino;
+RH141;Producao;Supervisor de Producao;CLT;1,8;3813,78;4;Nao;;18-24;Feminino;4
+RH142;Comercial/Vendas;Representante Comercial;Temporario;4,2;4840,13;1;Nao;;25-34;Masculino;3
+RH143;Marketing;Designer;CLT;2,3;4372,86;2;Nao;;55+;Masculino;3
+RH144;Logistica;Conferente;CLT;9,7;3142,46;3;Nao;;25-34;Masculino;4
+RH145;Logistica;Auxiliar Logistico;CLT;5,6;3444,60;5;Nao;;45-54;Feminino;3
+RH146;Financeiro;Contador;CLT;1,3;4070,20;3;Nao;;35-44;Feminino;4
+RH147;Financeiro;Assistente Financeiro;CLT;6,8;5874,54;3;Nao;;35-44;Feminino;4
+RH148;Administrativo;Analista Administrativo;Estagio;4,5;4149,91;1;Nao;;45-54;Feminino;3
+RH149;RH;Assistente de RH;CLT;1,6;4435,63;2;Nao;;35-44;Feminino;4
+RH150;Logistica;Auxiliar Logistico;CLT;3,4;3439,23;3;Nao;;45-54;Feminino;4
+RH151;Comercial/Vendas;Representante Comercial;Temporario;0,8;4009,13;4;Nao;;25-34;Feminino;5
+RH152;Producao;Operador de Maquina;CLT;1,5;3385,32;5;Nao;;18-24;Feminino;3
+RH153;Logistica;Motorista Entregador;CLT;4,1;3127,61;4;Nao;;35-44;Masculino;4
+RH154;Administrativo;Assistente Administrativo;CLT;6,7;4097,75;5;Nao;;45-54;Masculino;4
+RH155;Comercial/Vendas;Supervisor de Vendas;CLT;5,3;3436,58;5;Nao;;45-54;Masculino;3
+RH156;Producao;Supervisor de Producao;CLT;2,6;3212,96;4;Nao;;25-34;Masculino;2
+RH157;RH;Assistente de RH;CLT;9,8;4027,10;3;Nao;;25-34;Feminino;3
+RH158;Comercial/Vendas;Analista Comercial;CLT;1,0;4590,70;3;Nao;;35-44;Masculino;4
+RH159;Producao;Auxiliar de Producao;CLT;8,4;3079,06;3;Nao;;25-34;Masculino;4
+RH160;Marketing;Analista de Marketing;CLT;8,3;6083,98;3;Nao;;35-44;Feminino;5
+RH161;Producao;Supervisor de Producao;CLT;6,8;2954,68;3;Nao;;35-44;Masculino;2
+RH162;Logistica;Motorista Entregador;Estagio;8,7;1823,71;2;Nao;;25-34;Masculino;2
+RH163;Producao;Tecnico de Qualidade;Temporario;7,8;2694,84;5;Nao;;18-24;Masculino;3
+RH164;Comercial/Vendas;Representante Comercial;Temporario;0,7;4274,96;4;Nao;;25-34;Masculino;3
+RH165;Comercial/Vendas;Analista Comercial;CLT;5,7;2749,21;3;Nao;;35-44;Masculino;4
+RH166;Financeiro;Analista Financeiro;CLT;6,5;4391,77;3;Nao;;25-34;Feminino;4
+RH167;Producao;Supervisor de Producao;CLT;2,1;3192,10;3;Nao;;25-34;Masculino;5
+RH168;Producao;Auxiliar de Producao;CLT;1,5;2871,66;4;Nao;;25-34;Masculino;3
+RH169;RH;Analista de RH;CLT;3,8;5217,59;5;Nao;;25-34;Feminino;3
+RH170;Marketing;Designer;CLT;8,3;6128,63;3;Nao;;25-34;Feminino;3
+RH171;Comercial/Vendas;Representante Comercial;CLT;4,5;3418,60;4;Nao;;35-44;Masculino;5
+RH172;Producao;Operador de Maquina;CLT;6,1;4355,06;3;Nao;;35-44;Masculino;3
+RH173;RH;Analista de RH;CLT;4,0;4630,88;5;Nao;;35-44;Feminino;4
+RH174;Comercial/Vendas;Supervisor de Vendas;CLT;1,6;2480,47;2;Nao;;25-34;Feminino;5
+RH175;Marketing;Designer;CLT;1,6;5776,29;5;Nao;;25-34;Masculino;4
+RH176;Producao;Operador de Maquina;CLT;4,0;2562,46;5;Nao;;18-24;Masculino;3
+RH177;RH;Gerente de RH;CLT;7,5;3504,66;2;Nao;;18-24;Masculino;4
+RH178;RH;Gerente de RH;CLT;9,8;5021,21;3;Nao;;25-34;Masculino;3
+RH179;Comercial/Vendas;Supervisor de Vendas;CLT;4,5;5697,35;4;Nao;;55+;Feminino;4
+RH180;Comercial/Vendas;Representante Comercial;CLT;6,1;2380,86;5;Nao;;18-24;Feminino;3
