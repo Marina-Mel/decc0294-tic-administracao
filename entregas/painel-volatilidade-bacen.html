@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel de Volatilidade — BACEN (SGS) · Pastel Interativo</title>
+<style>
+:root{
+  --bg:#F0F6FF;--bg2:#E6F0FA;--panel:#FFFFFF;--panel2:#F7FAFE;
+  --line:#DCE6F1;--text:#1E3A5F;--muted:#6B7F99;--accent:#5B9BD5;--accent2:#7FB3D5;
+  --green:#6FCF97;--red:#EB5757;--amber:#F6C344;--shadow:0 6px 20px rgba(30,58,95,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);color:var(--text);padding:18px;min-height:100vh}
+header{background:linear-gradient(135deg,#A8C8E8,#7FB3D5 55%,#5B9BD5);border:1px solid #BFD6EC;border-radius:18px;padding:20px;margin-bottom:12px;box-shadow:var(--shadow)}
+header h1{font-size:1.35rem;color:#1E3A5F}header h1 .gold{color:#1E3A5F;font-weight:700}
+header p{opacity:.9;margin-top:6px;font-size:.86rem;color:#2C5282}
+.note{background:#FFFFFF;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:.78rem;margin-bottom:12px;color:var(--muted);box-shadow:var(--shadow)}
+.note b{color:var(--accent)}
+.controls{position:sticky;top:0;z-index:20;background:rgba(240,246,255,.92);backdrop-filter:blur(6px);padding:12px;border:1px solid var(--line);border-radius:14px;display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px;align-items:center;box-shadow:var(--shadow)}
+.controls select,.controls input{background:#FFFFFF;color:var(--text);padding:8px 12px;border:1px solid var(--line);border-radius:10px;font-size:.85rem}
+.controls button{background:#FFFFFF;color:var(--muted);border:1px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer;font-size:.85rem;transition:.2s}
+.controls button:hover{color:#1E3A5F;border-color:var(--accent);background:#EAF2FB}
+.controls label{font-size:.82rem;color:var(--muted);font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:10px;margin:12px 0}
+.card{background:linear-gradient(180deg,#FFFFFF,#F7FAFE);border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center;box-shadow:var(--shadow)}
+.card .v{font-size:1.15rem;font-weight:800;color:var(--accent)}.card .l{font-size:.7rem;color:var(--muted);font-weight:600;margin-top:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:12px}
+.panel{background:linear-gradient(180deg,#FFFFFF,#F7FAFE);border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow)}
+.panel h3{font-size:.92rem;color:#1E3A5F}.panel .sub{font-size:.72rem;color:var(--muted);margin-bottom:8px}
+.canvas-wrap{position:relative;height:240px}
+canvas{width:100%;height:100%;display:block;cursor:crosshair}
+.tip{position:fixed;background:#FFFFFF;border:1px solid var(--accent);color:#1E3A5F;padding:8px 10px;border-radius:8px;font-size:.76rem;pointer-events:none;opacity:0;z-index:50;max-width:260px;box-shadow:var(--shadow)}
+.table-wrap{background:#FFFFFF;border:1px solid var(--line);border-radius:16px;margin-top:12px;overflow:auto;max-height:45vh;box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;font-size:.76rem;min-width:700px}
+th{position:sticky;top:0;background:#EAF2FB;color:var(--accent);padding:8px 7px;text-align:left}
+td{padding:6px 7px;border-bottom:1px solid #EDF2F8}
+tr:hover td{background:#F3F8FD}
+footer{margin:12px;color:var(--muted);font-size:.76rem;text-align:center}
+.status{font-size:.82rem;color:#2C5282;font-weight:600}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.72rem;font-weight:700}
+.badge.up{background:#DCEFD9;color:#2F7A3D}.badge.down{background:#FBE0E0;color:#A33A3A}.badge.flat{background:#E3ECF7;color:#2C5282}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.small{font-size:.74rem;color:var(--muted)}
+.pagination{display:flex;gap:8px;align-items:center;margin:8px 0;flex-wrap:wrap}
+.pagination button{padding:6px 10px}
+@media (max-width:700px){.grid{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header><h1>⚡ Painel de Volatilidade BACEN · SGS — Risco em Tempo Real (Histórico)</h1>
+<p><b>O que este painel faz:</b> consome a API oficial do Banco Central (SGS), calcula a volatilidade realizada (dispersão dos retornos) de câmbio, juros e preços, anualiza, abre janela móvel e classifica o regime (alta/estável/baixa). Use para dimensionar margem de caixa, precificação e cláusulas contratuais — <i>não é previsão de preço</i>. Filtre, recalcule e exporte no navegador.</p></header>
+<div class="note">Fonte: <b>API SGS (api.bcb.gov.br)</b> · coleta embutida no arquivo · fórmulas: retorno log, dp amostral (n-1), anualização √252/√12, janela móvel, regime vol21/vol252, drawdown. Tema azul pastel.</div>
+<div class="controls">
+<label>Série: <select id="selSerie"></select></label>
+<label>Tipo: <select id="selTipo"><option value="log">Preço/câmbio (retorno log)</option><option value="diff">Taxa/inflação (variação em p.p.)</option></select></label>
+<label>Janela móvel (pts): <select id="selJanela"><option value="21">21</option><option value="63" selected>63</option><option value="252">252</option></select></label>
+<label>Busca tabela: <input id="searchBox" placeholder="data..." style="width:110px"></label>
+<button id="btnRecalc">Recalcular</button>
+<button id="btnReset">Resetar</button>
+<button id="btnExport">Exportar CSV</button>
+<span id="status" class="status"></span>
+</div>
+<div class="cards" id="kpis"></div>
+<div class="grid">
+<div class="panel"><h3>Série de nível</h3><div class="sub">Hover para detalhar · escala automática</div><div class="canvas-wrap"><canvas id="cSerie"></canvas></div></div>
+<div class="panel"><h3>Volatilidade móvel (anualizada)</h3><div class="sub">Janela selecionada · regime = vol21 / vol252</div><div class="canvas-wrap"><canvas id="cVol"></canvas></div></div>
+<div class="panel"><h3>Retornos diários</h3><div class="sub">Barras verdes/vermelhas por sinal</div><div class="canvas-wrap"><canvas id="cRet"></canvas></div></div>
+<div class="panel"><h3>Drawdown da janela</h3><div class="sub">Queda a partir do pico acumulado</div><div class="canvas-wrap"><canvas id="cDD"></canvas></div></div>
+</div>
+<div class="table-wrap">
+<div class="pagination">
+<button id="prevPage">◀ Anterior</button>
+<span id="pageInfo" class="small"></span>
+<button id="nextPage">Próxima ▶</button>
+<span class="small" id="rowCount"></span>
+</div>
+<table><thead><tr><th>Data</th><th>Valor</th><th>Retorno</th><th>Vol móvel (a.a.)</th><th>Drawdown</th></tr></thead><tbody id="tb"></tbody></table>
+</div>
+<div class="tip" id="tip"></div>
+<footer>Volatilidade realizada (histórica) · não é previsão · sem dado intraday · BACEN SGS/PTAX · tema pastel</footer>
+
+<script>
+const SERIES = [{"codigo":"1","nome":"Dolar (SGS 1)","unidade":"R$/US$","frequencia":"diaria","coletadoEm":"2026-11-03","janela":{"inicio":"04/08/2026","fim":"30/10/2026"},"pontos":[{"data":"04/08/2026","valor":5.1053},{"data":"05/08/2026","valor":5.1154},{"data":"06/08/2026","valor":5.1017},{"data":"07/08/2026","valor":5.0908},{"data":"10/08/2026","valor":5.0963},{"data":"11/08/2026","valor":5.1285},{"data":"12/08/2026","valor":5.1639},{"data":"13/08/2026","valor":5.1859},{"data":"14/08/2026","valor":5.2236},{"data":"17/08/2026","valor":5.2014},{"data":"18/08/2026","valor":5.2043},{"data":"19/08/2026","valor":5.1714},{"data":"20/08/2026","valor":5.1862},{"data":"21/08/2026","valor":5.1625},{"data":"24/08/2026","valor":5.1512},{"data":"25/08/2026","valor":5.149},{"data":"26/08/2026","valor":5.1604},{"data":"27/08/2026","valor":5.1642},{"data":"28/08/2026","valor":5.2005},{"data":"31/08/2026","valor":5.1816},{"data":"01/09/2026","valor":5.157},{"data":"02/09/2026","valor":5.1273},{"data":"03/09/2026","valor":5.0962},{"data":"04/09/2026","valor":5.1253},{"data":"08/09/2026","valor":5.0856},{"data":"09/09/2026","valor":5.0979},{"data":"10/09/2026","valor":5.1149},{"data":"11/09/2026","valor":5.0918},{"data":"14/09/2026","valor":5.1696},{"data":"15/09/2026","valor":5.149},{"data":"16/09/2026","valor":5.1527},{"data":"17/09/2026","valor":5.1521},{"data":"18/09/2026","valor":5.1575},{"data":"21/09/2026","valor":5.1117},{"data":"22/09/2026","valor":5.1161},{"data":"23/09/2026","valor":5.1414},{"data":"24/09/2026","valor":5.1795},{"data":"25/09/2026","valor":5.1991},{"data":"28/09/2026","valor":5.2132},{"data":"29/09/2026","valor":5.2204},{"data":"30/09/2026","valor":5.1809},{"data":"01/10/2026","valor":5.2079},{"data":"02/10/2026","valor":5.2238},{"data":"05/10/2026","valor":4.9859},{"data":"06/10/2026","valor":4.9698},{"data":"07/10/2026","valor":4.9935},{"data":"08/10/2026","valor":5.0119},{"data":"09/10/2026","valor":4.9892},{"data":"13/10/2026","valor":5.0096},{"data":"14/10/2026","valor":5.0441},{"data":"15/10/2026","valor":5.0521},{"data":"16/10/2026","valor":5.0826},{"data":"19/10/2026","valor":5.0564},{"data":"20/10/2026","valor":5.014},{"data":"21/10/2026","valor":5.0277},{"data":"22/10/2026","valor":5.0383},{"data":"23/10/2026","valor":5.0377},{"data":"26/10/2026","valor":5.5007},{"data":"27/10/2026","valor":5.3346},{"data":"28/10/2026","valor":5.342},{"data":"29/10/2026","valor":5.3744},{"data":"30/10/2026","valor":5.4212}]},{"codigo":"11","nome":"Selic diaria (SGS 11)","unidade":"% a.d.","frequencia":"diaria","coletadoEm":"2026-11-03","janela":{"inicio":"04/08/2026","fim":"30/10/2026"},"pontos":[{"data":"04/08/2026","valor":0.052531},{"data":"05/08/2026","valor":0.052531},{"data":"06/08/2026","valor":0.05166},{"data":"07/08/2026","valor":0.05166},{"data":"10/08/2026","valor":0.05166},{"data":"11/08/2026","valor":0.05166},{"data":"12/08/2026","valor":0.05166},{"data":"13/08/2026","valor":0.05166},{"data":"14/08/2026","valor":0.05166},{"data":"17/08/2026","valor":0.05166},{"data":"18/08/2026","valor":0.05166},{"data":"19/08/2026","valor":0.05166},{"data":"20/08/2026","valor":0.05166},{"data":"21/08/2026","valor":0.05166},{"data":"24/08/2026","valor":0.05166},{"data":"25/08/2026","valor":0.05166},{"data":"26/08/2026","valor":0.05166},{"data":"27/08/2026","valor":0.05166},{"data":"28/08/2026","valor":0.05166},{"data":"31/08/2026","valor":0.05166},{"data":"01/09/2026","valor":0.05166},{"data":"02/09/2026","valor":0.05166},{"data":"03/09/2026","valor":0.05166},{"data":"04/09/2026","valor":0.05166},{"data":"08/09/2026","valor":0.05166},{"data":"09/09/2026","valor":0.05166},{"data":"10/09/2026","valor":0.05166},{"data":"11/09/2026","valor":0.05166},{"data":"14/09/2026","valor":0.05166},{"data":"15/09/2026","valor":0.05166},{"data":"16/09/2026","valor":0.05166},{"data":"17/09/2026","valor":0.050788},{"data":"18/09/2026","valor":0.050788},{"data":"21/09/2026","valor":0.050788},{"data":"22/09/2026","valor":0.050788},{"data":"23/09/2026","valor":0.050788},{"data":"24/09/2026","valor":0.050788},{"data":"25/09/2026","valor":0.050788},{"data":"28/09/2026","valor":0.050788},{"data":"29/09/2026","valor":0.050788},{"data":"30/09/2026","valor":0.050788},{"data":"01/10/2026","valor":0.050788},{"data":"02/10/2026","valor":0.050788},{"data":"05/10/2026","valor":0.050788},{"data":"06/10/2026","valor":0.050788},{"data":"07/10/2026","valor":0.050788},{"data":"08/10/2026","valor":0.050788},{"data":"09/10/2026","valor":0.050788},{"data":"13/10/2026","valor":0.050788},{"data":"14/10/2026","valor":0.050788},{"data":"15/10/2026","valor":0.050788},{"data":"16/10/2026","valor":0.050788},{"data":"19/10/2026","valor":0.050788},{"data":"20/10/2026","valor":0.050788},{"data":"21/10/2026","valor":0.050788},{"data":"22/10/2026","valor":0.050788},{"data":"23/10/2026","valor":0.050788},{"data":"26/10/2026","valor":0.050788},{"data":"27/10/2026","valor":0.050788},{"data":"28/10/2026","valor":0.050788},{"data":"29/10/2026","valor":0.050788},{"data":"30/10/2026","valor":0.050788}]},{"codigo":"4390","nome":"Meta Selic (SGS 4390)","unidade":"% a.a.","frequencia":"mensal","coletadoEm":"2026-11-03","janela":{"inicio":"01/11/2025","fim":"01/10/2026"},"pontos":[{"data":"01/11/2025","valor":1.05},{"data":"01/12/2025","valor":1.22},{"data":"01/01/2026","valor":1.16},{"data":"01/02/2026","valor":1},{"data":"01/03/2026","valor":1.21},{"data":"01/04/2026","valor":1.09},{"data":"01/05/2026","valor":1.07},{"data":"01/06/2026","valor":1.12},{"data":"01/07/2026","valor":1.22},{"data":"01/08/2026","valor":1.09},{"data":"01/09/2026","valor":1.08},{"data":"01/10/2026","valor":1.07}]},{"codigo":"13522","nome":"IPCA 12m (SGS 13522)","unidade":"% a.a.","frequencia":"mensal","coletadoEm":"2026-11-03","janela":{"inicio":"01/11/2025","fim":"01/09/2026"},"pontos":[{"data":"01/11/2025","valor":4.46},{"data":"01/12/2025","valor":4.26},{"data":"01/01/2026","valor":4.44},{"data":"01/02/2026","valor":3.81},{"data":"01/03/2026","valor":4.14},{"data":"01/04/2026","valor":4.39},{"data":"01/05/2026","valor":4.72},{"data":"01/06/2026","valor":4.64},{"data":"01/07/2026","valor":4.44},{"data":"01/08/2026","valor":4.22},{"data":"01/09/2026","valor":4.58}]}];
+
+let state = { idx:0, tipo:'log', janela:63, page:0, pageSize:30, search:'' };
+const tip = document.getElementById('tip');
+const showTip=(x,y,html)=>{tip.style.opacity=1;tip.innerHTML=html;tip.style.left=(x+14)+'px';tip.style.top=(y+14)+'px';};
+const hideTip=()=>tip.style.opacity=0;
+
+function parseDate(s){const [d,m,a]=s.split('/');return new Date(+a,+m-1,+d);}
+function fmtNum(v){return (v==null||isNaN(v))?'—':v.toLocaleString('pt-BR',{maximumFractionDigits:4});}
+function fmtPct(v){return (v==null||isNaN(v))?'—':(v*100).toFixed(2)+'%';}
+function isPp(){const s=SERIES[state.idx];return state.tipo==='diff' || /%/.test(s.unidade||'');}
+function fmtVol(v){if(v==null||isNaN(v))return '—';return isPp()?v.toFixed(2)+' p.p.':(v*100).toFixed(2)+'%';}
+function fmtVolAxis(v){if(v==null||isNaN(v))return '';return isPp()?v.toFixed(2):(v*100).toFixed(1)+'%';}
+
+function mean(arr){if(!arr.length)return NaN;return arr.reduce((a,b)=>a+b,0)/arr.length;}
+function median(arr){if(!arr.length)return NaN;const s=arr.slice().sort((a,b)=>a-b);const m=Math.floor(s.length/2);return s.length%2?s[m]:(s[m-1]+s[m])/2;}
+function std(arr){const n=arr.length;if(n<2)return NaN;const m=mean(arr);const v=arr.reduce((a,b)=>a+(b-m)**2,0)/(n-1);return Math.sqrt(v);}
+function skewness(arr){const n=arr.length;if(n<3)return NaN;const m=mean(arr);const s=std(arr);if(!s)return NaN;const third=arr.reduce((a,b)=>a+((b-m)/s)**3,0)/n;return third*Math.sqrt(n*(n-1))/(n-2);}
+function kurtosis(arr){const n=arr.length;if(n<4)return NaN;const m=mean(arr);const s=std(arr);if(!s)return NaN;const fourth=arr.reduce((a,b)=>a+((b-m)/s)**4,0)/n;return fourth-3;}
+function var95(arr){if(!arr.length)return NaN;const s=arr.slice().sort((a,b)=>a-b);const idx=Math.floor(0.05*s.length);return s[Math.max(0,idx)];}
+function cvar95(arr){if(!arr.length)return NaN;const s=arr.slice().sort((a,b)=>a-b);const cut=Math.max(1,Math.floor(0.05*s.length));const tail=s.slice(0,cut);return mean(tail);}
+
+function returns(series,tipo){
+  const pts=series.pontos.slice().sort((a,b)=>parseDate(a.data)-parseDate(b.data));
+  const out=[{data:pts[0].data,valor:pts[0].valor,ret:null}];
+  for(let i=1;i<pts.length;i++){
+    const prev=pts[i-1].valor,cur=pts[i].valor;let r;
+    if(tipo==='log')r=Math.log(cur/prev);else r=cur-prev;
+    out.push({data:pts[i].data,valor:cur,ret:r});
+  }
+  return out;
+}
+
+function annualizeFactor(freq){return freq==='mensal'?Math.sqrt(12):Math.sqrt(252);}
+
+function compute(series,tipo,win){
+  const pts=returns(series,tipo);
+  const rets=pts.map(p=>p.ret).filter(v=>v!=null&&!isNaN(v));
+  const dp=std(rets);
+  const factor=annualizeFactor(series.frequencia);
+  const volAA=dp*factor;
+  const movel=[];const allRets=pts.map(p=>p.ret);
+  for(let i=0;i<pts.length;i++){
+    const start=Math.max(1,i-win+1);const windowRets=[];
+    for(let j=start;j<=i;j++){if(allRets[j]!=null&&!isNaN(allRets[j]))windowRets.push(allRets[j]);}
+    if(windowRets.length>=2)movel.push({i,data:pts[i].data,vol:std(windowRets)*factor});
+    else movel.push({i,data:pts[i].data,vol:NaN});
+  }
+  const last21=rets.slice(-21);const last252=rets.slice(-252);
+  const vol21=std(last21)*factor;const vol252=std(last252)*factor;
+  const regime=(vol252&&!isNaN(vol252))?vol21/vol252:NaN;
+  const vals=pts.map(p=>p.valor);
+  const mx=Math.max(...vals),mn=Math.min(...vals);
+  const drawdown=mx?mn/mx-1:NaN;
+  const media=mean(vals);const med=median(vals);
+  // drawdown series
+  const ddSeries=[];let peak=vals[0];
+  vals.forEach((v,i)=>{peak=Math.max(peak,v);ddSeries.push({i,data:pts[i].data,val:v,dd:peak?v/peak-1:0});});
+  // retornos para gráfico de barras
+  const retBars=pts.map((p,i)=>({i,data:p.data,ret:i===0?0:p.ret}));
+  return {pts,rets,dp,volAA,movel,vol21,vol252,regime,drawdown,media,med,min:mn,max:mx,factor,
+    skew:skewness(rets),kurt:kurtosis(rets),var95:var95(rets),cvar95:cvar95(rets),
+    ddSeries,retBars,win};
+}
+
+let current=null;
+function renderKPIs(c){
+  const el=document.getElementById('kpis');el.innerHTML='';
+  const items=[
+    [c.pts.length,'Observações'],
+    [fmtNum(c.media),'Média do nível'],
+    [fmtNum(c.med),'Mediana do nível'],
+    [fmtNum(c.dp),'Desvio-padrão'],
+    [fmtVol(c.volAA),'Vol. anualizada'],
+    [fmtNum(c.min),'Mínimo'],
+    [fmtNum(c.max),'Máximo'],
+    [fmtPct(c.drawdown),'Drawdown'],
+    [fmtVol(c.vol21),'Vol. 21 pts'],
+    [fmtVol(c.vol252),'Vol. 252 pts'],
+    [(isNaN(c.regime)?'—':c.regime.toFixed(2))+'x','Regime (21/252)'],
+    [c.skew.toFixed(3),'Assimetria'],
+    [c.kurt.toFixed(3),'Curtose'],
+    [fmtNum(c.var95),'VaR 95% (retorno)'],
+    [fmtNum(c.cvar95),'CVaR 95%'],
+  ];
+  items.forEach(([v,l])=>{const d=document.createElement('div');d.className='card';d.innerHTML=`<div class="v">${v}</div><div class="l">${l}</div>`;el.appendChild(d);});
+  const badge=document.createElement('div');badge.className='card';
+  let cls='flat',txt='estável';
+  if(!isNaN(c.regime)){if(c.regime>1.1){cls='up';txt='alta de vol';}else if(c.regime<0.9){cls='down';txt='baixa de vol';}}
+  badge.innerHTML=`<div class="v"><span class="badge ${cls}">${txt}</span></div><div class="l">Regime</div>`;
+  el.appendChild(badge);
+}
+
+// Canvas helpers
+function setupCanvas(canvas){
+  const dpr=window.devicePixelRatio||1;
+  const rect=canvas.getBoundingClientRect();
+  canvas.width=Math.floor(rect.width*dpr);
+  canvas.height=Math.floor(rect.height*dpr);
+  const ctx=canvas.getContext('2d');
+  ctx.scale(dpr,dpr);
+  return {ctx,w:rect.width,h:rect.height};
+}
+function clear(ctx,w,h){ctx.clearRect(0,0,w,h);ctx.fillStyle='#F7FAFE';ctx.fillRect(0,0,w,h);}
+function scaleLinear(domain,range){const [d0,d1]=domain,[r0,r1]=range;return v=>r0+(v-d0)/(d1-d0)*(r1-r0);}
+
+function drawSeries(pts){
+  const canvas=document.getElementById('cSerie');
+  const {ctx,w,h}=setupCanvas(canvas);
+  clear(ctx,w,h);
+  const pad={t:14,r:16,b:34,l:56};
+  const vals=pts.map(p=>p.valor);
+  const vmin=Math.min(...vals),vmax=Math.max(...vals);
+  const vmin2=vmin-(vmax-vmin)*0.06,vmax2=vmax+(vmax-vmin)*0.06;
+  const y=scaleLinear([vmin2,vmax2],[h-pad.b,pad.t]);
+  const x=scaleLinear([0,pts.length-1],[pad.l,w-pad.r]);
+  ctx.strokeStyle='#E3ECF7';ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){const yy=pad.t+(h-pad.b-pad.t)*i/4;ctx.beginPath();ctx.moveTo(pad.l,yy);ctx.lineTo(w-pad.r,yy);ctx.stroke();}
+  // fill
+  const grad=ctx.createLinearGradient(0,pad.t,0,h-pad.b);
+  grad.addColorStop(0,'rgba(91,155,213,.22)');grad.addColorStop(1,'rgba(91,155,213,0)');
+  ctx.fillStyle=grad;
+  ctx.beginPath();
+  pts.forEach((p,i)=>{const xx=x(i),yy=y(p.valor);i===0?ctx.moveTo(xx,yy):ctx.lineTo(xx,yy);});
+  ctx.lineTo(x(pts.length-1),h-pad.b);ctx.lineTo(x(0),h-pad.b);ctx.closePath();ctx.fill();
+  // line
+  ctx.strokeStyle='#5B9BD5';ctx.lineWidth=2.2;
+  ctx.beginPath();
+  pts.forEach((p,i)=>{const xx=x(i),yy=y(p.valor);i===0?ctx.moveTo(xx,yy):ctx.lineTo(xx,yy);});
+  ctx.stroke();
+  // axes
+  ctx.fillStyle='#6B7F99';ctx.font='10px Segoe UI';ctx.textAlign='center';
+  const step=Math.max(1,Math.floor(pts.length/6));
+  for(let i=0;i<pts.length;i+=step){ctx.fillText(pts[i].data.slice(0,5),x(i),h-pad.b+14);}
+  ctx.textAlign='right';
+  for(let i=0;i<=4;i++){const val=vmax2-(vmax2-vmin2)*i/4;const yy=pad.t+(h-pad.b-pad.t)*i/4;ctx.fillText(fmtNum(val),pad.l-6,yy+3);}
+  canvas._x=x;canvas._y=y;canvas._pts=pts;canvas._pad=pad;
+}
+
+function drawVol(movel){
+  const canvas=document.getElementById('cVol');
+  const {ctx,w,h}=setupCanvas(canvas);
+  clear(ctx,w,h);
+  const pad={t:14,r:16,b:34,l:56};
+  const valid=movel.filter(m=>!isNaN(m.vol));
+  if(!valid.length)return;
+  const vmax=Math.max(...valid.map(m=>m.vol));
+  const vmin=0;
+  const y=scaleLinear([vmin,vmax*1.12],[h-pad.b,pad.t]);
+  const x=scaleLinear([0,movel.length-1],[pad.l,w-pad.r]);
+  ctx.strokeStyle='#E3ECF7';ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){const yy=pad.t+(h-pad.b-pad.t)*i/4;ctx.beginPath();ctx.moveTo(pad.l,yy);ctx.lineTo(w-pad.r,yy);ctx.stroke();}
+  const grad=ctx.createLinearGradient(0,pad.t,0,h-pad.b);
+  grad.addColorStop(0,'rgba(246,195,68,.22)');grad.addColorStop(1,'rgba(246,195,68,0)');
+  ctx.fillStyle=grad;
+  ctx.beginPath();let started=false;
+  movel.forEach((m,i)=>{if(isNaN(m.vol))return;const xx=x(i),yy=y(m.vol);if(!started){ctx.moveTo(xx,yy);started=true;}else ctx.lineTo(xx,yy);});
+  const lastValid=movel.map((m,i)=>isNaN(m.vol)?null:i).filter(v=>v!=null).pop();
+  const firstValid=movel.map((m,i)=>isNaN(m.vol)?null:i).filter(v=>v!=null).shift();
+  if(firstValid!=null&&lastValid!=null){ctx.lineTo(x(lastValid),h-pad.b);ctx.lineTo(x(firstValid),h-pad.b);}
+  ctx.closePath();ctx.fill();
+  ctx.strokeStyle='#F6C344';ctx.lineWidth=2.2;
+  ctx.beginPath();started=false;
+  movel.forEach((m,i)=>{if(isNaN(m.vol))return;const xx=x(i),yy=y(m.vol);if(!started){ctx.moveTo(xx,yy);started=true;}else ctx.lineTo(xx,yy);});
+  ctx.stroke();
+  ctx.fillStyle='#6B7F99';ctx.font='10px Segoe UI';ctx.textAlign='center';
+  const step=Math.max(1,Math.floor(movel.length/6));
+  for(let i=0;i<movel.length;i+=step){ctx.fillText(movel[i].data.slice(0,5),x(i),h-pad.b+14);}
+  ctx.textAlign='right';
+  for(let i=0;i<=4;i++){const val=vmax*1.12*(1-i/4);const yy=pad.t+(h-pad.b-pad.t)*i/4;ctx.fillText(fmtVolAxis(val),pad.l-6,yy+3);}
+  canvas._x=x;canvas._y=y;canvas._movel=movel;canvas._pad=pad;
+}
+
+function drawRetBars(retBars){
+  const canvas=document.getElementById('cRet');
+  const {ctx,w,h}=setupCanvas(canvas);
+  clear(ctx,w,h);
+  const pad={t:14,r:16,b:34,l:56};
+  const vals=retBars.map(r=>r.ret).filter(v=>v!=null&&!isNaN(v));
+  const vmax=Math.max(...vals.map(v=>Math.abs(v)));
+  const y=scaleLinear([-vmax*1.1,vmax*1.1],[h-pad.b,pad.t]);
+  const x=scaleLinear([0,retBars.length-1],[pad.l,w-pad.r]);
+  const bw=Math.max(2,(w-pad.l-pad.r)/retBars.length*0.7);
+  ctx.strokeStyle='#E3ECF7';ctx.lineWidth=1;
+  const zeroY=y(0);ctx.beginPath();ctx.moveTo(pad.l,zeroY);ctx.lineTo(w-pad.r,zeroY);ctx.stroke();
+  retBars.forEach((r,i)=>{if(r.ret==null||isNaN(r.ret))return;const xx=x(i);const yy=y(r.ret);const top=Math.min(yy,zeroY);const height=Math.abs(yy-zeroY);ctx.fillStyle=r.ret>=0?'#6FCF97':'#EB5757';ctx.fillRect(xx-bw/2,top,bw,height);});
+  ctx.fillStyle='#6B7F99';ctx.font='10px Segoe UI';ctx.textAlign='center';
+  const step=Math.max(1,Math.floor(retBars.length/6));
+  for(let i=0;i<retBars.length;i+=step){ctx.fillText(retBars[i].data.slice(0,5),x(i),h-pad.b+14);}
+  ctx.textAlign='right';
+  for(let i=0;i<=4;i++){const val=vmax*1.1*(1-2*i/4);const yy=pad.t+(h-pad.b-pad.t)*i/4;ctx.fillText(fmtNum(val),pad.l-6,yy+3);}
+  canvas._x=x;canvas._pts=retBars;canvas._pad=pad;
+}
+
+function drawDD(ddSeries){
+  const canvas=document.getElementById('cDD');
+  const {ctx,w,h}=setupCanvas(canvas);
+  clear(ctx,w,h);
+  const pad={t:14,r:16,b:34,l:56};
+  const vals=ddSeries.map(d=>d.dd);
+  const vmin=Math.min(...vals),vmax=0;
+  const y=scaleLinear([vmin*1.1,0.02],[h-pad.b,pad.t]);
+  const x=scaleLinear([0,ddSeries.length-1],[pad.l,w-pad.r]);
+  ctx.strokeStyle='#E3ECF7';ctx.lineWidth=1;
+  for(let i=0;i<=4;i++){const yy=pad.t+(h-pad.b-pad.t)*i/4;ctx.beginPath();ctx.moveTo(pad.l,yy);ctx.lineTo(w-pad.r,yy);ctx.stroke();}
+  const grad=ctx.createLinearGradient(0,pad.t,0,h-pad.b);
+  grad.addColorStop(0,'rgba(235,87,87,.22)');grad.addColorStop(1,'rgba(235,87,87,0)');
+  ctx.fillStyle=grad;
+  ctx.beginPath();
+  ddSeries.forEach((d,i)=>{const xx=x(i),yy=y(d.dd);i===0?ctx.moveTo(xx,yy):ctx.lineTo(xx,yy);});
+  ctx.lineTo(x(ddSeries.length-1),y(0));ctx.lineTo(x(0),y(0));ctx.closePath();ctx.fill();
+  ctx.strokeStyle='#EB5757';ctx.lineWidth=2;
+  ctx.beginPath();
+  ddSeries.forEach((d,i)=>{const xx=x(i),yy=y(d.dd);i===0?ctx.moveTo(xx,yy):ctx.lineTo(xx,yy);});
+  ctx.stroke();
+  ctx.fillStyle='#6B7F99';ctx.font='10px Segoe UI';ctx.textAlign='center';
+  const step=Math.max(1,Math.floor(ddSeries.length/6));
+  for(let i=0;i<ddSeries.length;i+=step){ctx.fillText(ddSeries[i].data.slice(0,5),x(i),h-pad.b+14);}
+  ctx.textAlign='right';
+  for(let i=0;i<=4;i++){const val=(vmin*1.1)*(1-i/4);const yy=pad.t+(h-pad.b-pad.t)*i/4;ctx.fillText(fmtPct(val),pad.l-6,yy+3);}
+  canvas._x=x;canvas._pts=ddSeries;canvas._pad=pad;
+}
+
+function renderTable(pts,movel){
+  const tb=document.getElementById('tb');tb.innerHTML='';
+  const volByI=movel.reduce((a,m)=>{a[m.i]=m.vol;return a;},{});
+  const ddByI=current.ddSeries.reduce((a,d)=>{a[d.i]=d.dd;return a;},{});
+  const allRets=pts.map(p=>p.ret);
+  const search=state.search.toLowerCase();
+  const filtered=pts.map((p,i)=>({p,i})).filter(o=>!search||o.p.data.toLowerCase().includes(search));
+  const total=filtered.length;
+  const start=state.page*state.pageSize;
+  const pageItems=filtered.slice(start,start+state.pageSize);
+  pageItems.forEach(({p,i})=>{
+    const tr=document.createElement('tr');
+    const r=p.ret;const v=volByI[i];const dd=ddByI[i];
+    tr.innerHTML=`<td>${p.data}</td><td>${fmtNum(p.valor)}</td><td>${r==null?'—':fmtNum(r)}</td><td>${isNaN(v)?'—':fmtVol(v)}</td><td>${isNaN(dd)?'—':fmtPct(dd)}</td>`;
+    tb.appendChild(tr);
+  });
+  document.getElementById('pageInfo').textContent=`Página ${state.page+1} de ${Math.max(1,Math.ceil(total/state.pageSize))}`;
+  document.getElementById('rowCount').textContent=`${total} linhas`;
+}
+
+function render(){
+  const s=SERIES[state.idx];
+  state.tipo=document.getElementById('selTipo').value;
+  state.janela=+document.getElementById('selJanela').value;
+  s.frequencia=s.frequencia||'diaria';
+  current=compute(s,state.tipo,state.janela);
+  renderKPIs(current);
+  drawSeries(current.pts);
+  drawVol(current.movel);
+  drawRetBars(current.retBars);
+  drawDD(current.ddSeries);
+  state.page=0;
+  renderTable(current.pts,current.movel);
+  document.getElementById('status').textContent=`${s.nome} · ${s.pontos.length} pts · ${s.janela?.inicio||''} a ${s.janela?.fim||''} · coleta ${s.coletadoEm||'NAO SEI'}`;
+}
+
+function init(){
+  const sel=document.getElementById('selSerie');
+  SERIES.forEach((s,i)=>{const o=document.createElement('option');o.value=i;o.textContent=`${s.nome} (SGS ${s.codigo})`;sel.appendChild(o);});
+  sel.addEventListener('change',e=>{state.idx=+e.target.value;const s=SERIES[state.idx];const t=/ipca|inpc|selic|taxa|cdi/i.test(s.nome)?'diff':'log';document.getElementById('selTipo').value=t;render();});
+  document.getElementById('btnRecalc').addEventListener('click',render);
+  document.getElementById('selTipo').addEventListener('change',render);
+  document.getElementById('selJanela').addEventListener('change',render);
+  document.getElementById('btnReset').addEventListener('click',()=>{state.page=0;state.search='';document.getElementById('searchBox').value='';render();});
+  document.getElementById('searchBox').addEventListener('input',e=>{state.search=e.target.value;state.page=0;renderTable(current.pts,current.movel);});
+  document.getElementById('prevPage').addEventListener('click',()=>{if(state.page>0){state.page--;renderTable(current.pts,current.movel);}});
+  document.getElementById('nextPage').addEventListener('click',()=>{const total=current.pts.length;const maxP=Math.ceil(total/state.pageSize)-1;if(state.page<maxP){state.page++;renderTable(current.pts,current.movel);}});
+  document.getElementById('btnExport').addEventListener('click',()=>{
+    const s=SERIES[state.idx];
+    const rows=[['data','valor','retorno','vol_movel','drawdown']];
+    const volByI=current.movel.reduce((a,m)=>{a[m.i]=m.vol;return a;},{});
+    const ddByI=current.ddSeries.reduce((a,d)=>{a[d.i]=d.dd;return a;},{});
+    current.pts.forEach((p,i)=>rows.push([p.data,p.valor,p.ret==null?'':p.ret,volByI[i]??'',ddByI[i]??'']));
+    const csv=rows.map(r=>r.join(',')).join('\n');
+    const blob=new Blob([csv],{type:'text/csv'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');a.href=url;a.download=`volatilidade_${s.codigo}.csv`;a.click();
+    URL.revokeObjectURL(url);
+  });
+  const s0=SERIES[0];
+  document.getElementById('selTipo').value=/ipca|inpc|selic|taxa|cdi/i.test(s0.nome)?'diff':'log';
+  render();
+}
+
+function attachTooltip(canvasId,getData){
+  const canvas=document.getElementById(canvasId);
+  canvas.addEventListener('mousemove',e=>{const rect=canvas.getBoundingClientRect();const x=e.clientX-rect.left;const info=getData(canvas,x);if(info)showTip(e.clientX,e.clientY,info);else hideTip();});
+  canvas.addEventListener('mouseleave',hideTip);
+}
+attachTooltip('cSerie',(canvas,x)=>{if(!canvas._pts||!canvas._x)return null;const pts=canvas._pts;const xs=canvas._x;let best=0,bestD=Infinity;pts.forEach((p,i)=>{const d=Math.abs(xs(i)-x);if(d<bestD){bestD=d;best=i;}});const p=pts[best];return `<b>${p.data}</b><br>Valor: ${fmtNum(p.valor)}${p.ret==null?'':'<br>Retorno: '+fmtNum(p.ret)}`;});
+attachTooltip('cVol',(canvas,x)=>{if(!canvas._movel||!canvas._x)return null;const movel=canvas._movel;const xs=canvas._x;let best=0,bestD=Infinity;movel.forEach((m,i)=>{if(isNaN(m.vol))return;const d=Math.abs(xs(i)-x);if(d<bestD){bestD=d;best=i;}});const m=movel[best];if(!m||isNaN(m.vol))return null;return `<b>${m.data}</b><br>Vol móvel: ${fmtVol(m.vol)}`;});
+attachTooltip('cRet',(canvas,x)=>{if(!canvas._pts||!canvas._x)return null;const pts=canvas._pts;const xs=canvas._x;let best=0,bestD=Infinity;pts.forEach((p,i)=>{const d=Math.abs(xs(i)-x);if(d<bestD){bestD=d;best=i;}});const p=pts[best];if(p.ret==null)return null;return `<b>${p.data}</b><br>Retorno: ${fmtNum(p.ret)}`;});
+attachTooltip('cDD',(canvas,x)=>{if(!canvas._pts||!canvas._x)return null;const pts=canvas._pts;const xs=canvas._x;let best=0,bestD=Infinity;pts.forEach((p,i)=>{const d=Math.abs(xs(i)-x);if(d<bestD){bestD=d;best=i;}});const p=pts[best];return `<b>${p.data}</b><br>Drawdown: ${fmtPct(p.dd)}`;});
+
+window.addEventListener('resize',()=>{if(current)render();});
+init();
+</script>
+</body>
+</html>
